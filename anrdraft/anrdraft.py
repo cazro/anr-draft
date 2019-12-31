@@ -358,11 +358,11 @@ async def open_next_pack_or_wait(draft_id, player_id, card):
                 
                 await send_dm(
                     player_id=get_player_dm_id(player),
-                    text=format_picks('Corp:\n\n', picks['corp'])
+                    content=format_picks('Corp:\n\n', picks['corp'])
                 )
                 await send_dm(
                     player_id=get_player_dm_id(player),
-                    text=format_picks('Runner:\n\n', picks['runner'])
+                    content=format_picks('Runner:\n\n', picks['runner'])
                 )
             cleanup(draft_id)
         else:
@@ -403,10 +403,7 @@ async def on_message(message):
             card = get_card(card_code)
             await open_next_pack_or_wait(draft_id, message.author.id,card)
         else:
-            await send_dm(
-                player_id = message.author.id,
-                content = 'Missing card code!'
-            )
+            await message.channel.send('Missing card code!')
         
 
     if message.content.startswith('!debug'):
@@ -421,10 +418,7 @@ async def on_message(message):
         else:
             msg = 'Only an admin can use this command.'
             print('User {0.author.name} tried to debug instead of {owner}'.format(message,owner=OWNER))
-        await send_dm(
-            player_id = message.author.id,
-            content = msg
-        )
+        await message.channel.send(msg)
 
     if message.content.startswith('!createdraft'):
         user_name = message.author.name
@@ -440,10 +434,7 @@ async def on_message(message):
             You can only create one draft at a time. You can use 
             `!canceldraft [draft_id]` to quit and then start over.
             '''
-        await send_dm(
-            player_id = message.author.id,
-            content = msg
-        )
+        await message.channel.send(content = msg)
 
     if message.content.startswith('!canceldraft'):
         if len(message.content.split()) > 1:
@@ -486,10 +477,7 @@ async def on_message(message):
                 await open_new_pack(draft_id)
             
         else:
-            await send_dm(
-                player_id = message.author.id,
-                content='Missing draft id!'
-            )
+            await message.channel.send('Missing draft id!')
 
     if message.content.startswith('!joindraft'):
         if len(message.content.split()) > 1:
@@ -518,15 +506,9 @@ async def on_message(message):
                     Successfully joined draft `{draft_id}`. Please wait for `{creator}`
                     to begin the draft.
                 '''.format(draft_id=draft_id, creator=creator_name)
-            await send_dm(
-                player_id = message.author.id,
-                content = msg
-            )
+            await message.channel.send(content = msg)
         else:
-            await send_dm(
-                player_id = message.author.id,
-                content='Missing draft id!'
-            )
+            await message.channel.send(content='Missing draft id!')
 
     if message.content.startswith('!leavedraft'):
         if len(message.content.split()) > 1:
@@ -554,17 +536,12 @@ async def on_message(message):
                         {num} players registered.
                         '''.format(player=player_name, draft=draft_id, num=num_players)
                 )
-                msg = 'Successfully withdrew from draft `{draft_id}`.'.format(draft_id=draft_id, creator=creator_name)
+                msg = 'Successfully withdrew from draft `{draft_id}`.'.format(draft_id=draft_id)
 
-            await send_dm(
-                player_id = message.author.id,
-                content = msg
-            )
+            await message.channel.send(content = msg)
+
         else:
-            await send_dm(
-                player_id = message.author.id,
-                content='Missing draft id!'
-            )
+            await message.channel.send(content='Missing draft id!')
 
 
     if message.content.startswith('!showpicks'):
