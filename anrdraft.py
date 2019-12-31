@@ -473,7 +473,7 @@ async def on_message(message):
             elif draft_started(draft_id):
                 msg = 'Draft `{draft_id}` has already started.'.format(draft_id=draft_id)
             else:
-                await message.channel.send('Draft {draft_id} is starting!'.format(draft_id=draft_id))
+                await message.channel.send('Draft `{draft_id}` is starting!'.format(draft_id=draft_id))
                 setup_packs(draft_id)
                 assign_seat_numbers(draft_id)
                 DRAFTS[draft_id]['metadata']['has_started'] = True
