@@ -2,10 +2,18 @@
 Now for Discord
 
 Put your bot's token in secrets.json
+
+## Install
+
+```python setup.py install```
+
+Or just...
+
+```pip install discord```
+
+since that's the only dependency.
+
 ## Actions
-
-!pick [card code]
-
 #### Create Draft
 
 !createdraft
@@ -13,6 +21,10 @@ Put your bot's token in secrets.json
 #### Join Draft
 
 !joindraft [draft ID]
+
+#### Pick Card
+
+!pick [card code]
 
 #### Leave Draft
 
