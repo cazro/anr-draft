@@ -7,12 +7,8 @@ verify_ssl = true
 autopep8 = "*"
 
 [packages]
-flask = "*"
-requests = "*"
 pylint = "*"
-slackclient = "*"
-sentry-sdk = {extras = ["flask"],version = "==0.13.4"}
-gunicorn = "*"
+discord = "*"
 
 [requires]
 python_version = "3.7"

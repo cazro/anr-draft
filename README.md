@@ -2,16 +2,20 @@
 
 ## Actions
 
+!pick [card code]
+
 #### Create Draft
 
-- Generate a new draft_id.
-- Add the basic structure of a new draft.
+!createdraft
 
 #### Join Draft
 
+!joindraft [draft ID]
+
 #### Leave Draft
+
+!leavedraft [draft ID]
 
 #### Begin Draft
 
-- set `has_started` to `True`.
-- message everyone in the draft their first pack (IDs)
+!startdraft [draft ID]
