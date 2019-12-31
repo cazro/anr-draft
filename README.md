@@ -1,5 +1,7 @@
 # ANR Draft
+Now for Discord
 
+Put your bot's token in secrets.json
 ## Actions
 
 !pick [card code]
