@@ -1,8 +1,6 @@
 # ANR Draft
 Now for Discord
 
-Put your bot's token in secrets.json
-
 ## Install
 
 ```python setup.py install```
@@ -13,6 +11,12 @@ Or just...
 
 since that's the only dependency.
 
+## Setup
+
+Put your bot's token in anrdraft/secrets.json
+
+There is an example file that you can use and rename to secrets.json
+
 ## Actions
 #### Create Draft
 
@@ -22,6 +26,10 @@ since that's the only dependency.
 
 !joindraft [draft ID]
 
+#### Begin Draft
+
+!startdraft [draft ID]
+
 #### Pick Card
 
 !pick [card code]
@@ -30,6 +38,4 @@ since that's the only dependency.
 
 !leavedraft [draft ID]
 
-#### Begin Draft
 
-!startdraft [draft ID]
