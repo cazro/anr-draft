@@ -8,6 +8,7 @@ import string
 import time
 import asyncio
 import discord
+from discord.ext import commands
 
 from templates import blocks, templates
 
@@ -15,9 +16,14 @@ HERE = os.path.dirname(os.path.abspath(__file__))
 with open(HERE + '/secrets.json', 'r') as f:
     tokens = json.loads(f.read())
     TOKEN = tokens["api_token"]
-    
-# SLACK METHOD - REPLACE WITH DISCORD RED METHOD
-client = discord.Client()
+
+description = ('This is a Discord bot for drafting games of Android Netrunner. '
+    'Users can create drafts for others to join. The bot will recreate the draft '
+    'environment where random packs are created and dispersed. People can pick a card '
+    'and the pack will be passed to the next person until the draft is complete. '
+    'This bot does not simulate the playing of the game, however.')
+
+bot = commands.Bot(command_prefix='!',description=description)
 
 DRAFTS = {}
 PLAYERS = {}
@@ -82,6 +88,15 @@ def get_image_url(code):
         imageUrlTemplate = json.loads(f.read())['imageUrlTemplate']
         return imageUrlTemplate.format(code=code)
 
+
+async def get_owner():
+    if not hasattr(bot, 'appinfo'):
+        bot.appinfo = await bot.application_info()
+    return bot.appinfo.owner.name
+
+
+#Checks
+
 def player_has_pack_waiting(draft_id, player_name):
     inbox = DRAFTS[draft_id]['players'][player_name]['inbox']
     return len(inbox) > 0
@@ -113,7 +128,7 @@ def user_can_create_draft(username):
 # Discord Helpers
 
 async def send_dm(player_id, content,embed=None):
-    user = client.get_user(player_id)
+    user = bot.get_user(player_id)
 
     if user.dm_channel:
         dm_channel = user.dm_channel
@@ -230,11 +245,8 @@ def setup_packs(draft_id):
 
 
 def add_player(player_name, player_id, draft_id):
-    # im_list = client.im_list()
-    # for im in im_list['ims']:
-        # if im['user'] == player_id:
-    if client.get_user(player_id):
-        player_dm_id = client.get_user(player_id).id
+    if bot.get_user(player_id):
+        player_dm_id = bot.get_user(player_id).id
 
     DRAFTS[draft_id]['players'][player_name] = {
         'inbox': [],
@@ -349,7 +361,7 @@ async def open_next_pack_or_wait(draft_id, player_id, card):
     if need_new_pack:
         if draft_finished(draft_id):
             for player in get_players(draft_id):
-                # SLACK METHOD - REPLACE WITH DISCORD RED METHOD
+                
                 await send_dm(
                     player_id=get_player_dm_id(player),
                     content='The draft is complete! Here are your picks:'
@@ -388,211 +400,212 @@ def format_picks(heading, picks):
     cards = '\n'.join(picks_copy)
     return '```' + heading + '\n' + cards + '```'
 
-# Endpoints / Slash Commands
-@client.event
-async def on_message(message):
-    # we do not want the bot to reply to itself
-    if message.author == client.user:
-        return
 
-    if message.content.startswith('!pick'):
-        if len(message.content.split()) > 1:
-            card_code = message.content.split()[1]
-            draft_id = PLAYERS[message.author.name]['draft_id']
-            handle_pick(draft_id, message.author.name, card_code)
-            card = get_card(card_code)
-            await open_next_pack_or_wait(draft_id, message.author.id,card)
-        else:
-            await message.channel.send('Missing card code!')
-        
+# Bot Commands
 
-    if message.content.startswith('!debug'):
-        if message.author.name == await get_owner():
-            with open('debug.log', 'w') as f:
-                f.write(json.dumps({
-                    'dumped_at': time.strftime("%Y-%m-%d %H:%M"),
-                    'PLAYERS': PLAYERS,
-                    'DRAFTS': DRAFTS
-                }, indent=4, sort_keys=True))
-            msg = 'Dump successful.'
-        else:
-            msg = 'Only an admin can use this command.'
-            print('User {0.author.name} tried to debug instead of {owner}'.format(message,owner=OWNER))
-        await message.channel.send(msg)
+@bot.command()
+async def pick(ctx, card_code):
+    draft_id = PLAYERS[ctx.author.name]['draft_id']
+    handle_pick(draft_id, ctx.author.name, card_code)
+    card = get_card(card_code)
+    await open_next_pack_or_wait(draft_id, ctx.author.id,card)
 
-    if message.content.startswith('!createdraft'):
-        user_name = message.author.name
-        if user_can_create_draft(user_name):
-            user_id = message.author.id
-            new_draft_code = setup_draft(user_name, user_id)
-            msg = '''Draft successfully created. Your draft ID is `{draft_id}`. 
-            Other players can use this code with the `!joindraft {draft_id}` command 
-            to join the draft.
-            '''.format(draft_id=new_draft_code)
-        else:
-            msg = '''
-            You can only create one draft at a time. You can use 
-            `!canceldraft [draft_id]` to quit and then start over.
-            '''
-        await message.channel.send(content = msg)
 
-    if message.content.startswith('!canceldraft'):
-        if len(message.content.split()) > 1:
-            user_name = message.author.name
-            draft_id = message.content.split()[1]
-            if user_name != get_creator(draft_id):
-                msg = 'Only the draft creator can cancel it.'
-            elif draft_id not in DRAFTS:
-                msg = 'Draft does not exist.'
-            elif draft_started(draft_id):
-                msg = 'Draft `{draft_id}` has already started.'.format(draft_id=draft_id)
-            else:
-                await _cancel_draft(draft_id)
-                msg = 'Draft successfully cancelled.'
-        else:
-            msg = 'Missing draft id!'
-        await message.channel.send(msg)
+@bot.command()
+async def debug(ctx):
+    if ctx.author.name == await get_owner():
+        with open('debug.log', 'w') as f:
+            f.write(json.dumps({
+                'dumped_at': time.strftime("%Y-%m-%d %H:%M"),
+                'PLAYERS': PLAYERS,
+                'DRAFTS': DRAFTS
+            }, indent=4, sort_keys=True))
+        msg = 'Dump successful.'
+    else:
+        msg = 'Only an admin can use this command.'
+        print('User {0.author.name} tried to debug instead of {owner}'.format(message,owner=OWNER))
+    await ctx.send(msg)
 
-    if message.content.startswith('!startdraft'):
-        if len(message.content.split()) > 1:
-            draft_id = message.content.split()[1]
-            user_name = message.author.name
-            if user_name != get_creator(draft_id):
-                msg  = 'Only the draft creator can start the draft.'
-            elif draft_id not in DRAFTS:
-                msg = 'Draft does not exist.'
-            elif draft_started(draft_id):
-                msg = 'Draft `{draft_id}` has already started.'.format(draft_id=draft_id)
-            else:
-                await message.channel.send('Draft `{draft_id}` is starting!'.format(draft_id=draft_id))
-                setup_packs(draft_id)
-                assign_seat_numbers(draft_id)
-                DRAFTS[draft_id]['metadata']['has_started'] = True
-                for player in get_players(draft_id):
-                    
-                    await send_dm(
-                        player_id=get_player_id(player),
-                        content='Welcome to the draft! Here is your first pack. Good luck!'
-                    )
-                await open_new_pack(draft_id)
+
+@bot.command(name='create', aliases=['createdraft'])
+async def create_draft(ctx):
+    user_name = ctx.author.name
+    if user_can_create_draft(user_name):
+        user_id = ctx.author.id
+        new_draft_code = setup_draft(user_name, user_id)
+        msg = ('Draft successfully created.\n'
+            'Your draft ID is `{draft_id}`.\n'
+            'Other players can use this code with the `!join {draft_id}` command to join the draft.').format(draft_id=new_draft_code)
+    else:
+        msg = ('You can only create one draft at a time.\n'
+            'You can use `!canceldraft [draft_id]` to quit and then start over.')
+    await ctx.send(content = msg)
+
+
+@bot.command(name='cancel', aliases=['canceldraft'])
+async def cancel_draft(ctx, draft_id):
+    user_name = ctx.author.name
+
+    if user_name != get_creator(draft_id):
+        msg = 'Only the draft creator can cancel it.'
+    elif draft_id not in DRAFTS:
+        msg = 'Draft does not exist.'
+    elif draft_started(draft_id):
+        msg = 'Draft `{draft_id}` has already started.'.format(draft_id=draft_id)
+    else:
+        await _cancel_draft(draft_id)
+        msg = 'Draft successfully cancelled.'
+
+    await ctx.send(msg)
+
+
+@bot.command(name='start', aliases=['startdraft'])
+async def start_draft(ctx, draft_id):
+ 
+    user_name = ctx.author.name
+    if user_name != get_creator(draft_id):
+        msg  = 'Only the draft creator can start the draft.'
+    elif draft_id not in DRAFTS:
+        msg = 'Draft does not exist.'
+    elif draft_started(draft_id):
+        msg = 'Draft `{draft_id}` has already started.'.format(draft_id=draft_id)
+    else:
+        await ctx.send('Draft `{draft_id}` is starting!'.format(draft_id=draft_id))
+        setup_packs(draft_id)
+        assign_seat_numbers(draft_id)
+        DRAFTS[draft_id]['metadata']['has_started'] = True
+        for player in get_players(draft_id):
             
-        else:
-            await message.channel.send('Missing draft id!')
+            await send_dm(
+                player_id=get_player_id(player),
+                content='Welcome to the draft! Here is your first pack. Good luck!'
+            )
+        await open_new_pack(draft_id)
 
-    if message.content.startswith('!joindraft'):
-        if len(message.content.split()) > 1:
-            draft_id = message.content.split()[1]
-            player_name = message.author.name
-            player_id = message.author.id
-            if draft_id not in DRAFTS:
-                msg = 'Draft does not exist.'
-            elif player_name in get_players(draft_id):
-                msg = 'You can not join the same draft more than once.'
-            elif draft_started(draft_id):
-                msg = 'Draft `{draft_id}` has already started.'.format(draft_id=draft_id)
-            else:
-                add_player(player_name, player_id, draft_id)
-                creator_name = get_creator(draft_id)
-                creator_id = get_player_id(creator_name)
-                num_players = get_num_players(draft_id)
-                await send_dm(
-                    player_id=creator_id,
-                    content='''
-                        {player} has joined your draft (`{draft}`). There are now
-                        {num} players registered.
-                    '''.format(player=player_name, draft=draft_id, num=num_players)
+
+@bot.command(name='join', aliases=['joindraft'])
+async def join_draft(ctx, draft_id):
+    player_name = ctx.author.name
+    player_id = ctx.author.id
+    if draft_id not in DRAFTS:
+        msg = 'Draft does not exist.'
+    elif player_name in get_players(draft_id):
+        msg = 'You can not join the same draft more than once.'
+    elif draft_started(draft_id):
+        msg = 'Draft `{draft_id}` has already started.'.format(draft_id=draft_id)
+    else:
+        add_player(player_name, player_id, draft_id)
+        creator_name = get_creator(draft_id)
+        creator_id = get_player_id(creator_name)
+        num_players = get_num_players(draft_id)
+        await send_dm(
+            player_id=creator_id,
+            content=('{player} has joined your draft (`{draft}`).\n'
+                'There are now {num} players registered.').format(player=player_name, draft=draft_id, num=num_players)
+        )
+        msg = ('Successfully joined draft `{draft_id}`.\n'
+            'Please wait for `{creator}` to begin the draft.').format(
+                draft_id=draft_id, 
+                creator=creator_name
+            )
+    await ctx.send(content = msg)
+
+
+@bot.command(name='leave', aliases=['leavedraft'])
+async def leave_draft(ctx, draft_id):
+    player_name = ctx.author.name
+    # remove_player() does the checks I usually do here
+    res = remove_player(player_name, draft_id)
+    if res != 'ok':
+        msg = 'Failed to leave draft. Error: ' + res
+    elif player_name == get_creator(draft_id):
+        await _cancel_draft(draft_id)
+        msg = ('Successfully withdrew from draft `{draft_id}`.\n'
+            'Because you were the creator of this draft it has been cancelled. \n'
+            'The other players have been notified.').format(draft_id=draft_id)
+    else:
+        creator_name = get_creator(draft_id)
+        creator_id = get_player_dm_id(creator_name)
+        num_players = get_num_players(draft_id)
+        await send_dm(
+            player_id = creator_id,
+            content = ('{player} has left your draft (`{draft}`).\n'
+                'There are now {num} players registered.').format(
+                    player=player_name, 
+                    draft=draft_id, 
+                    num=num_players
                 )
-                msg = '''
-                    Successfully joined draft `{draft_id}`. Please wait for `{creator}`
-                    to begin the draft.
-                '''.format(draft_id=draft_id, creator=creator_name)
-            await message.channel.send(content = msg)
-        else:
-            await message.channel.send(content='Missing draft id!')
+        )
+        msg = 'Successfully withdrew from draft `{draft_id}`.'.format(draft_id=draft_id)
 
-    if message.content.startswith('!leavedraft'):
-        if len(message.content.split()) > 1:
-            draft_id = message.content.split()[1]
-            player_name = message.author.name
-            # remove_player() does the checks I usually do here
-            res = remove_player(player_name, draft_id)
-            if res != 'ok':
-                msg = 'Failed to leave draft. Error: ' + res
-            elif player_name == get_creator(draft_id):
-                _cancel_draft(draft_id)
-                msg = '''
-                    Successfully withdrew from draft `{draft_id}`. 
-                    Because you were the creator of this draft it has 
-                    been cancelled. The other players have been notified.
-                '''.format(draft_id=draft_id)
-            else:
-                creator_name = get_creator(draft_id)
-                creator_id = get_player_dm_id(creator_name)
-                num_players = get_num_players(draft_id)
-                await send_dm(
-                    player_id = creator_id,
-                    content = '''
-                        {player} has left your draft (`{draft}`). There are now 
-                        {num} players registered.
-                        '''.format(player=player_name, draft=draft_id, num=num_players)
-                )
-                msg = 'Successfully withdrew from draft `{draft_id}`.'.format(draft_id=draft_id)
-
-            await message.channel.send(content = msg)
-
-        else:
-            await message.channel.send(content='Missing draft id!')
+    await ctx.send(content = msg)
 
 
-    if message.content.startswith('!showpicks'):
-        player_name = message.author.name
-        if player_name not in PLAYERS:
-            await send_dm(
-                player_id = get_player_dm_id(player_name),
-                content = 'You are not enrolled in a draft.'
-            )
-        else:
-            draft_id = PLAYERS[player_name]['draft_id']
-            # SLACK METHOD - REPLACE WITH DISCORD RED METHOD
-            await send_dm(
-                player_id =get_player_dm_id(player_name),
-                content='Here are your picks so far:'
-            )
-            picks = get_picks(draft_id, player_name)
-            # SLACK METHOD - REPLACE WITH DISCORD RED METHOD
-            await send_dm(
-                player_id=get_player_dm_id(player_name),
-                content=format_picks('Corp:\n\n', picks['corp'])
-            )
-            # SLACK METHOD - REPLACE WITH DISCORD RED METHOD
-            await send_dm(
-                player_id=get_player_dm_id(player_name),
-                content=format_picks('Runner:\n\n', picks['runner'])
-            )
+@bot.command(name='showpicks', aliases=['picks'])
+async def show_picks(ctx):
+    player_name = ctx.author.name
+    if player_name not in PLAYERS:
+        await send_dm(
+            player_id = get_player_dm_id(player_name),
+            content = 'You are not enrolled in a draft.'
+        )
+    else:
+        draft_id = PLAYERS[player_name]['draft_id']
+        
+        await send_dm(
+            player_id =get_player_dm_id(player_name),
+            content='Here are your picks so far:'
+        )
+        picks = get_picks(draft_id, player_name)
+        
+        await send_dm(
+            player_id=get_player_dm_id(player_name),
+            content=format_picks('Corp:\n\n', picks['corp'])
+        )
+        
+        await send_dm(
+            player_id=get_player_dm_id(player_name),
+            content=format_picks('Runner:\n\n', picks['runner'])
+        )
 
-@client.event
+
+@bot.command()
+async def owner(ctx):
+    owner = await get_owner()
+    await ctx.send('The owner of the bot is {}'.format(owner))
+
+
+# Events
+
+@bot.event
 async def on_ready():
-    if not hasattr(client, 'appinfo'):
-        client.appinfo = await client.application_info()
-    appinfo = client.appinfo
+    if not hasattr(bot, 'appinfo'):
+        bot.appinfo = await bot.application_info()
+    appinfo = bot.appinfo
     print('Application name and owner')
     print(appinfo.name)
     print(await get_owner())
     print('Logged in as')
-    print(client.user.name)
-    print(client.user.id)
+    print(bot.user.name)
+    print(bot.user.id)
     print('------')
+
+
+@bot.event
+async def on_command_error(ctx, error):
+    await ctx.send('ERROR: {}'.format(error))
+    if isinstance(error,commands.CommandNotFound):
+        await ctx.send_help()
+    elif isinstance(error, commands.UserInputError):
+        await ctx.send_help(ctx.command)
 
 
 async def _cancel_draft(draft_id):
     for player in get_players(draft_id):
-        # SLACK METHOD - REPLACE WITH DISCORD RED METHOD
+        
         await send_dm(
             player_id=get_player_dm_id(player),
-            content='''
-                Draft `{draft_id}` was cancelled by 
-                `{creator}`.
-                '''.format(
+            content='Draft `{draft_id}` was cancelled by `{creator}`.'.format(
                     draft_id=draft_id,
                     creator=get_creator(draft_id)
                 )
@@ -600,11 +613,6 @@ async def _cancel_draft(draft_id):
         )
     cleanup(draft_id)
 
-async def get_owner():
-    if not hasattr(client, 'appinfo'):
-        client.appinfo = await client.application_info()
-    return client.appinfo.owner.name
-
 
 if __name__ == '__main__':
-    client.run(TOKEN)
+    bot.run(TOKEN)

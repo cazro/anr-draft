@@ -9,5 +9,5 @@ setup(name='Android Netrunner Discord Draft Bot',
       author_email='edk@ericdavidking.com',
       url='https://github.com/cazro/anr-draft',
       packages=['anrdraft',],
-      install_requires=['discord','asyncio']
+      install_requires=['discord']
      )
