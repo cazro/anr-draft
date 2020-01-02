@@ -17,6 +17,8 @@ with open(HERE + '/secrets.json', 'r') as f:
     tokens = json.loads(f.read())
     DISC_TOKEN = tokens["discord_token"]
 
+NRDB_IMAGE = "https://netrunnerdb.com/card_image/{code}.png"
+
 bot_prefix = '!'
 
 description = ('This is a Discord bot for drafting games of Android Netrunner. '
@@ -83,14 +85,6 @@ def get_card(card_code):
             return card
 
 
-def get_image_url(code):
-    data_dir = HERE + '/data'
-    filepath = data_dir + '/corp_ids.json'
-    with open(filepath, 'r') as f:
-        imageUrlTemplate = json.loads(f.read())['imageUrlTemplate']
-        return imageUrlTemplate.format(code=code)
-
-
 async def get_owner():
     if not hasattr(bot, 'appinfo'):
         bot.appinfo = await bot.application_info()
@@ -146,7 +140,11 @@ async def send_card(player,card):
     embedded_card = discord.Embed(title=card['title'])
     embedded_card.description = card_text
     embedded_card.add_field(name='To pick this card:',value='```!pick {code}```'.format(code=card['code']))
-    embedded_card.set_image(url=get_image_url(card['code']))
+
+    if card['image_url']:
+        embedded_card.set_image(url=card['image_url'])
+    else:
+        embedded_card.set_image(url=NRDB_IMAGE.format(code=card['code']))
 
     await send_dm(
         player_id=get_player_id(player),
@@ -415,7 +413,8 @@ async def pick(ctx, card_code):
 
 @bot.command(brief='Reserved for owner', description='Dumps a log of the the players joined and cards in the packs. Log located in anrdraft folder.', aliases=['dump'])
 async def debug(ctx, name=None):
-    if ctx.author.name == await get_owner():
+    (id,owner) = await get_owner();
+    if ctx.author.name == owner:
         with open('debug{name}-{datetime}.log'.format(name=('' if name == None else '-'+name), datetime = time.strftime("%Y-%m-%d_%H%M")), 'w') as f:
             f.write(json.dumps({
                 'dumped_at': time.strftime("%Y-%m-%d %H:%M"),
@@ -425,7 +424,7 @@ async def debug(ctx, name=None):
         msg = 'Dump successful.'
     else:
         msg = 'Only an admin can use this command.'
-        print('User {0.author.name} tried to debug instead of {owner}'.format(message,owner=OWNER))
+        print('User {0.author.name} tried to debug instead of {owner}'.format(ctx, owner=owner))
     await ctx.send(msg)
 
 
