@@ -460,7 +460,7 @@ async def cancel_draft(ctx, draft_id):
     await ctx.send(msg)
 
 
-@bot.command(name='start', brief='Start the draft', aliases=['startdraft'])
+@bot.command(name='start', brief='Start the draft. (Only for creator)', aliases=['startdraft'])
 async def start_draft(ctx, draft_id):
     msg = ''
     user_name = ctx.author.name
