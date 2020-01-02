@@ -482,6 +482,7 @@ async def start_draft(ctx, draft_id):
                 content='Welcome to the draft! Here is your first pack. Good luck!'
             )
         await open_new_pack(draft_id)
+    await ctx.send(content = msg)
 
 
 @bot.command(name='join', brief='Join a draft. (Creator already joined)', aliases=['joindraft'])
