@@ -20,22 +20,22 @@ There is an example file that you can use and rename to secrets.json
 ## Actions
 #### Create Draft
 
-!create
+```!create```
 
 #### Join Draft
 
-!join [draft ID]
+```!join [draft ID]```
 
 #### Begin Draft
 
-!start [draft ID]
+```!start [draft ID]```
 
 #### Pick Card
 
-!pick [card code]
+```!pick [card code]```
 
 #### Leave Draft
 
-!leave [draft ID]
+```!leave [draft ID]```
 
 
