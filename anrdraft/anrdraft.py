@@ -15,7 +15,9 @@ from templates import blocks, templates
 HERE = os.path.dirname(os.path.abspath(__file__))
 with open(HERE + '/secrets.json', 'r') as f:
     tokens = json.loads(f.read())
-    TOKEN = tokens["api_token"]
+    DISC_TOKEN = tokens["discord_token"]
+
+bot_prefix = '!'
 
 description = ('This is a Discord bot for drafting games of Android Netrunner. '
     'Users can create drafts for others to join. The bot will recreate the draft '
@@ -23,7 +25,7 @@ description = ('This is a Discord bot for drafting games of Android Netrunner. '
     'and the pack will be passed to the next person until the draft is complete. '
     'This bot does not simulate the playing of the game, however.')
 
-bot = commands.Bot(command_prefix='!',description=description)
+bot = commands.Bot(command_prefix=bot_prefix, description=description)
 
 DRAFTS = {}
 PLAYERS = {}
@@ -92,7 +94,7 @@ def get_image_url(code):
 async def get_owner():
     if not hasattr(bot, 'appinfo'):
         bot.appinfo = await bot.application_info()
-    return bot.appinfo.owner.name
+    return (bot.appinfo.owner.id,bot.appinfo.owner.name)
 
 
 #Checks
@@ -403,7 +405,7 @@ def format_picks(heading, picks):
 
 # Bot Commands
 
-@bot.command()
+@bot.command(brief='Pick a card from the pack.')
 async def pick(ctx, card_code):
     draft_id = PLAYERS[ctx.author.name]['draft_id']
     handle_pick(draft_id, ctx.author.name, card_code)
@@ -411,10 +413,10 @@ async def pick(ctx, card_code):
     await open_next_pack_or_wait(draft_id, ctx.author.id,card)
 
 
-@bot.command()
-async def debug(ctx):
+@bot.command(brief='Reserved for owner', description='Dumps a log of the the players joined and cards in the packs. Log located in anrdraft folder.', aliases=['dump'])
+async def debug(ctx, name=None):
     if ctx.author.name == await get_owner():
-        with open('debug.log', 'w') as f:
+        with open('debug{name}-{datetime}.log'.format(name=('' if name == None else '-'+name), datetime = time.strftime("%Y-%m-%d_%H%M")), 'w') as f:
             f.write(json.dumps({
                 'dumped_at': time.strftime("%Y-%m-%d %H:%M"),
                 'PLAYERS': PLAYERS,
@@ -427,7 +429,7 @@ async def debug(ctx):
     await ctx.send(msg)
 
 
-@bot.command(name='create', aliases=['createdraft'])
+@bot.command(name='create', brief='Create a new draft. (Can only create one at a time)', aliases=['createdraft'])
 async def create_draft(ctx):
     user_name = ctx.author.name
     if user_can_create_draft(user_name):
@@ -442,7 +444,7 @@ async def create_draft(ctx):
     await ctx.send(content = msg)
 
 
-@bot.command(name='cancel', aliases=['canceldraft'])
+@bot.command(name='cancel', brief='Cancel draft. (Only for creator)', description='Cancels draft. Can\'t be done once draft is started', aliases=['canceldraft'])
 async def cancel_draft(ctx, draft_id):
     user_name = ctx.author.name
 
@@ -459,7 +461,7 @@ async def cancel_draft(ctx, draft_id):
     await ctx.send(msg)
 
 
-@bot.command(name='start', aliases=['startdraft'])
+@bot.command(name='start', brief='Start the draft', aliases=['startdraft'])
 async def start_draft(ctx, draft_id):
  
     user_name = ctx.author.name
@@ -483,7 +485,7 @@ async def start_draft(ctx, draft_id):
         await open_new_pack(draft_id)
 
 
-@bot.command(name='join', aliases=['joindraft'])
+@bot.command(name='join', brief='Join a draft. (Creator already joined)', aliases=['joindraft'])
 async def join_draft(ctx, draft_id):
     player_name = ctx.author.name
     player_id = ctx.author.id
@@ -511,7 +513,7 @@ async def join_draft(ctx, draft_id):
     await ctx.send(content = msg)
 
 
-@bot.command(name='leave', aliases=['leavedraft'])
+@bot.command(name='leave', brief='Leave a draft.', description='Leaves draft. Can\'t be done once draft is started', aliases=['leavedraft'])
 async def leave_draft(ctx, draft_id):
     player_name = ctx.author.name
     # remove_player() does the checks I usually do here
@@ -541,7 +543,7 @@ async def leave_draft(ctx, draft_id):
     await ctx.send(content = msg)
 
 
-@bot.command(name='showpicks', aliases=['picks'])
+@bot.command(name='showpicks', brief='Show cards YOU have picked.', aliases=['picks'])
 async def show_picks(ctx):
     player_name = ctx.author.name
     if player_name not in PLAYERS:
@@ -569,11 +571,18 @@ async def show_picks(ctx):
         )
 
 
-@bot.command()
-async def owner(ctx):
-    owner = await get_owner()
-    await ctx.send('The owner of the bot is {}'.format(owner))
-
+@bot.command(brief='Tells you the owner. (Can also send them a message)')
+async def owner(ctx, *message):
+    (id,owner) = await get_owner()
+    
+    if len(message):
+        await send_dm(
+            player_id=id,
+            content='{user} wanted me to tell you, "{message}"'.format(user=ctx.author.name, message=' '.join(message))
+        )
+        await ctx.send('You sent {owner} the message "{message}"'.format(owner=owner,message=' '.join(message)))
+    else:
+        await ctx.send('The owner of the bot is {}'.format(owner))
 
 # Events
 
@@ -615,4 +624,4 @@ async def _cancel_draft(draft_id):
 
 
 if __name__ == '__main__':
-    bot.run(TOKEN)
+    bot.run(DISC_TOKEN)

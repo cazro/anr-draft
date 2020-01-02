@@ -22,13 +22,19 @@ There is an example file that you can use and rename to secrets.json
 
 ```!create```
 
+The Bot will then give you a draft ID that others will use to join the draft.
+
 #### Join Draft
 
 ```!join [draft ID]```
 
+The Bot will tell you when others have joined the draft.
+
 #### Begin Draft
 
 ```!start [draft ID]```
+
+Draft will begin and send everyone their first pack of cards.
 
 #### Pick Card
 
