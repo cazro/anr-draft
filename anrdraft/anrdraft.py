@@ -141,7 +141,7 @@ async def send_card(player,card):
     embedded_card.description = card_text
     embedded_card.add_field(name='To pick this card:',value='```!pick {code}```'.format(code=card['code']))
 
-    if card['image_url']:
+    if 'image_url' in card:
         embedded_card.set_image(url=card['image_url'])
     else:
         embedded_card.set_image(url=NRDB_IMAGE.format(code=card['code']))
@@ -462,12 +462,12 @@ async def cancel_draft(ctx, draft_id):
 
 @bot.command(name='start', brief='Start the draft', aliases=['startdraft'])
 async def start_draft(ctx, draft_id):
- 
+    msg = ''
     user_name = ctx.author.name
-    if user_name != get_creator(draft_id):
-        msg  = 'Only the draft creator can start the draft.'
-    elif draft_id not in DRAFTS:
+    if draft_id not in DRAFTS:
         msg = 'Draft does not exist.'
+    elif user_name != get_creator(draft_id):
+        msg  = 'Only the draft creator can start the draft.'
     elif draft_started(draft_id):
         msg = 'Draft `{draft_id}` has already started.'.format(draft_id=draft_id)
     else:
@@ -482,7 +482,8 @@ async def start_draft(ctx, draft_id):
                 content='Welcome to the draft! Here is your first pack. Good luck!'
             )
         await open_new_pack(draft_id)
-    await ctx.send(content = msg)
+    if msg:
+        await ctx.send(content = msg)
 
 
 @bot.command(name='join', brief='Join a draft. (Creator already joined)', aliases=['joindraft'])
