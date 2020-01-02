@@ -20,15 +20,15 @@ There is an example file that you can use and rename to secrets.json
 ## Actions
 #### Create Draft
 
-!createdraft
+!create
 
 #### Join Draft
 
-!joindraft [draft ID]
+!join [draft ID]
 
 #### Begin Draft
 
-!startdraft [draft ID]
+!start [draft ID]
 
 #### Pick Card
 
@@ -36,6 +36,6 @@ There is an example file that you can use and rename to secrets.json
 
 #### Leave Draft
 
-!leavedraft [draft ID]
+!leave [draft ID]
 
 
