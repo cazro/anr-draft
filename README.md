@@ -1,5 +1,5 @@
-# ANR Draft
-Now for Discord
+# Android Netrunner Discord Draft Bot
+Forked from wtodom/anr-draft which works with Slack.
 
 ## Install
 

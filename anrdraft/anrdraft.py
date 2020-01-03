@@ -245,9 +245,6 @@ def setup_packs(draft_id):
 
 
 def add_player(player_name, player_id, draft_id):
-    if bot.get_user(player_id):
-        player_dm_id = bot.get_user(player_id).id
-
     DRAFTS[draft_id]['players'][player_name] = {
         'inbox': [],
         'packs': [[], [], [], [], [], [], [], []],
@@ -260,7 +257,7 @@ def add_player(player_name, player_id, draft_id):
     PLAYERS[player_name] = {
         'player_id': player_id,
         'draft_id': draft_id,
-        'dm_id': player_dm_id
+        'dm_id': player_id
     }
 
     return 'ADD_SUCCESSFUL'

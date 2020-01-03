@@ -13,7 +13,7 @@
       "position": 2,
       "quantity": 2,
       "side_code": "runner",
-      "text": "Add 1 card (or up to 2 <strong>virus</strong> cards) from your heap to your grip.",
+      "text": "Add 1 card (or up to 2 **virus** cards) from your heap to your grip.",
       "title": "D\u00e9j\u00e0 Vu",
       "type_code": "event",
       "uniqueness": false
@@ -31,7 +31,7 @@
       "position": 6,
       "quantity": 1,
       "side_code": "runner",
-      "text": "+2[mu]\nWhenever you install a <strong>virus</strong> program, place 1 virus counter on that program.\nLimit 1 <strong>console</strong> per player.",
+      "text": "+2[mu]\nWhenever you install a **virus** program, place 1 virus counter on that program.\nLimit 1 **console** per player.",
       "title": "Grimoire",
       "type_code": "hardware",
       "uniqueness": true
@@ -49,7 +49,7 @@
       "position": 9,
       "quantity": 2,
       "side_code": "runner",
-      "text": "Djinn can host up to 3[mu] of non-<strong>icebreaker</strong> programs.\nThe memory costs of hosted programs do not count against your memory limit.\n[click], 1[credit]: Search your stack for a <strong>virus</strong> program, reveal it, and add it to your grip. Shuffle your stack.",
+      "text": "Djinn can host up to 3[mu] of non-**icebreaker** programs.\nThe memory costs of hosted programs do not count against your memory limit.\n[click], 1[credit]: Search your stack for a **virus** program, reveal it, and add it to your grip. Shuffle your stack.",
       "title": "Djinn",
       "type_code": "program",
       "uniqueness": false
@@ -106,7 +106,7 @@
       "quantity": 2,
       "side_code": "runner",
       "strength": 3,
-      "text": "0[credit]: Break <strong>code gate</strong> subroutine.",
+      "text": "0[credit]: Break **code gate** subroutine.",
       "title": "Yog.0",
       "type_code": "program",
       "uniqueness": false
@@ -158,7 +158,7 @@
       "position": 24,
       "quantity": 1,
       "side_code": "runner",
-      "text": "+1[mu]\nGain 1[credit] whenever you make a successful run.\nLimit 1 <strong>console</strong> per player.",
+      "text": "+1[mu]\nGain 1[credit] whenever you make a successful run.\nLimit 1 **console** per player.",
       "title": "Desperado",
       "type_code": "hardware",
       "uniqueness": true
@@ -178,7 +178,7 @@
       "quantity": 2,
       "side_code": "runner",
       "strength": 0,
-      "text": "1[credit]: Break <strong>sentry</strong> subroutine.\n3[credit]: +5 strength.",
+      "text": "1[credit]: Break **sentry** subroutine.\n3[credit]: +5 strength.",
       "title": "Ninja",
       "type_code": "program",
       "uniqueness": false
@@ -213,7 +213,7 @@
       "position": 41,
       "quantity": 1,
       "side_code": "runner",
-      "text": "+2[mu] +2[link]\n2[recurring-credit]\nUse these credits to pay for using <strong>icebreakers</strong>.\nLimit 1 <strong>console</strong> per player.",
+      "text": "+2[mu] +2[link]\n2[recurring-credit]\nUse these credits to pay for using **icebreakers**.\nLimit 1 **console** per player.",
       "title": "The Toolbox",
       "type_code": "hardware",
       "uniqueness": true
@@ -233,7 +233,7 @@
       "quantity": 3,
       "side_code": "runner",
       "strength": 1,
-      "text": "If you have at least 2[link], the memory cost of ZU.13 Key Master is 0, even if it is not installed.\n1[credit]: Break <strong>code gate</strong> subroutine.\n1[credit]: +1 strength.",
+      "text": "If you have at least 2[link], the memory cost of ZU.13 Key Master is 0, even if it is not installed.\n1[credit]: Break **code gate** subroutine.\n1[credit]: +1 strength.",
       "title": "ZU.13 Key Master",
       "type_code": "program",
       "uniqueness": false
@@ -251,7 +251,7 @@
       "position": 8,
       "quantity": 3,
       "side_code": "runner",
-      "text": "+1[link]\n[trash]: Choose an <strong>icebreaker</strong>. That <strong>icebreaker</strong> has +2 strength until the end of the turn.",
+      "text": "+1[link]\n[trash]: Choose an **icebreaker**. That **icebreaker** has +2 strength until the end of the turn.",
       "title": "The Helpful AI",
       "type_code": "resource",
       "uniqueness": true
@@ -268,7 +268,7 @@
       "position": 9,
       "quantity": 3,
       "side_code": "runner",
-      "text": "Place 4 power counters on Plascrete Carapace when it is installed. When there are no power counters left on Plascrete Carapace, trash it.\n<strong>Hosted power counter:</strong> Prevent 1 meat damage.",
+      "text": "Place 4 power counters on Plascrete Carapace when it is installed. When there are no power counters left on Plascrete Carapace, trash it.\n**Hosted power counter:** Prevent 1 meat damage.",
       "title": "Plascrete Carapace",
       "type_code": "hardware",
       "uniqueness": false
@@ -304,7 +304,7 @@
       "position": 24,
       "quantity": 3,
       "side_code": "runner",
-      "text": "Whenever you break a subroutine on a piece of ice, you may pay 1[credit] to break 1 subroutine on that ice.\n<errata>Errata from FAQ 3.0.1</errata>",
+      "text": "Whenever you break a subroutine on a piece of ice, you may pay 1[credit] to break 1 subroutine on that ice.\n*Errata from FAQ 3.0.1*",
       "title": "e3 Feedback Implants",
       "type_code": "hardware",
       "uniqueness": false
@@ -324,7 +324,7 @@
       "quantity": 3,
       "side_code": "runner",
       "strength": 1,
-      "text": "1[credit]: Break <strong>barrier</strong> subroutine.\n1[credit]: +1 strength.\nWhenever you use Snowball to break a subroutine, it has +1 strength for the remainder of the run.",
+      "text": "1[credit]: Break **barrier** subroutine.\n1[credit]: +1 strength.\nWhenever you use Snowball to break a subroutine, it has +1 strength for the remainder of the run.",
       "title": "Snowball",
       "type_code": "program",
       "uniqueness": false
@@ -484,7 +484,7 @@
       "quantity": 3,
       "side_code": "runner",
       "strength": 2,
-      "text": "If you have at least 2[link], the memory cost of Creeper is 0, even if it is not installed.\n2[credit]: Break <strong>sentry</strong> subroutine.\n1[credit]: +1 strength.",
+      "text": "If you have at least 2[link], the memory cost of Creeper is 0, even if it is not installed.\n2[credit]: Break **sentry** subroutine.\n1[credit]: +1 strength.",
       "title": "Creeper",
       "type_code": "program",
       "uniqueness": false
@@ -607,7 +607,7 @@
       "position": 34,
       "quantity": 3,
       "side_code": "runner",
-      "text": "Trash an installed program.\nIf you do, install a program from your grip or heap, lowering the install cost of that program by the cost of the program trashed.\n<errata>Errata from FAQ 4.0</errata>",
+      "text": "Trash an installed program.\nIf you do, install a program from your grip or heap, lowering the install cost of that program by the cost of the program trashed.\n*Errata from FAQ 4.0*",
       "title": "Scavenge",
       "type_code": "event",
       "uniqueness": false
@@ -696,7 +696,7 @@
       "quantity": 3,
       "side_code": "runner",
       "strength": 4,
-      "text": "1[credit]: Break <strong>code gate</strong> subroutine.\n1[credit]: +1 strength.\nWhen you install Cyber-Cypher, choose a server. Cyber-Cypher can only be used during a run on the chosen server.",
+      "text": "1[credit]: Break **code gate** subroutine.\n1[credit]: +1 strength.\nWhen you install Cyber-Cypher, choose a server. Cyber-Cypher can only be used during a run on the chosen server.",
       "title": "Cyber-Cypher",
       "type_code": "program",
       "uniqueness": false
@@ -752,7 +752,7 @@
       "quantity": 3,
       "side_code": "runner",
       "strength": 1,
-      "text": "1[credit]: Break <strong>barrier</strong> subroutine.\n2[credit]: +1 strength for the remainder of this run.",
+      "text": "1[credit]: Break **barrier** subroutine.\n2[credit]: +1 strength for the remainder of this run.",
       "title": "Inti",
       "type_code": "program",
       "uniqueness": false
@@ -858,7 +858,7 @@
       "position": 3,
       "quantity": 3,
       "side_code": "runner",
-      "text": "[click]: Host Rook on a piece of ice not hosting a <strong>Ca\u00efssa</strong>. If already hosted, Rook can be hosted only on ice protecting this server or on ice in the same position (counting from the innermost spot) protecting another server.\nThe rez cost of each piece of ice protecting this server is increased by 2.",
+      "text": "[click]: Host Rook on a piece of ice not hosting a **Ca\u00efssa**. If already hosted, Rook can be hosted only on ice protecting this server or on ice in the same position (counting from the innermost spot) protecting another server.\nThe rez cost of each piece of ice protecting this server is increased by 2.",
       "title": "Rook",
       "type_code": "program",
       "uniqueness": false
@@ -875,7 +875,7 @@
       "position": 4,
       "quantity": 3,
       "side_code": "runner",
-      "text": "As an additional cost to play this event, spend [click].\nSearch your stack for a <strong>connection</strong>, reveal it, and add it to your grip. You may install that <strong>connection</strong> (paying its install cost). Shuffle your stack.",
+      "text": "As an additional cost to play this event, spend [click].\nSearch your stack for a **connection**, reveal it, and add it to your grip. You may install that **connection** (paying its install cost). Shuffle your stack.",
       "title": "Hostage",
       "type_code": "event",
       "uniqueness": false
@@ -1004,7 +1004,7 @@
       "quantity": 3,
       "side_code": "runner",
       "strength": 7,
-      "text": "2[credit]: Break subroutine on host ice.\n[click]: Host Knight on a piece of ice not hosting a <strong>Ca\u00efssa</strong>. If already hosted, Knight can be hosted only on ice that is not installed directly before or after the current piece of ice hosting Knight.",
+      "text": "2[credit]: Break subroutine on host ice.\n[click]: Host Knight on a piece of ice not hosting a **Ca\u00efssa**. If already hosted, Knight can be hosted only on ice that is not installed directly before or after the current piece of ice hosting Knight.",
       "title": "Knight",
       "type_code": "program",
       "uniqueness": false
@@ -1024,7 +1024,7 @@
       "quantity": 3,
       "side_code": "runner",
       "strength": 4,
-      "text": "1[credit]: Break <strong>code gate</strong> subroutine.\n1[credit]: +1 strength.",
+      "text": "1[credit]: Break **code gate** subroutine.\n1[credit]: +1 strength.",
       "title": "Torch",
       "type_code": "program",
       "uniqueness": false
@@ -1042,7 +1042,7 @@
       "position": 61,
       "quantity": 3,
       "side_code": "runner",
-      "text": "[click]: Run R&D. If successful, instead of accessing cards, look at the top 3 cards of R&D. Trash 1 of those cards, then the Corp shuffles R&D.\n<errata>Errata from CR 1.2</errata>",
+      "text": "[click]: Run R&D. If successful, instead of accessing cards, look at the top 3 cards of R&D. Trash 1 of those cards, then the Corp shuffles R&D.\n*Errata from CR 1.2*",
       "title": "Keyhole",
       "type_code": "program",
       "uniqueness": false
@@ -1062,7 +1062,7 @@
       "quantity": 3,
       "side_code": "runner",
       "strength": 2,
-      "text": "1[credit]: Break <strong>sentry</strong> subroutine.\n1[credit]: +1 strength.",
+      "text": "1[credit]: Break **sentry** subroutine.\n1[credit]: +1 strength.",
       "title": "Garrote",
       "type_code": "program",
       "uniqueness": false
@@ -1082,7 +1082,7 @@
       "quantity": 3,
       "side_code": "runner",
       "strength": 3,
-      "text": "[trash]: Break any number of <strong>destroyer</strong> subroutines.\n1[credit]: +2 strength.",
+      "text": "[trash]: Break any number of **destroyer** subroutines.\n1[credit]: +2 strength.",
       "title": "Sharpshooter",
       "type_code": "program",
       "uniqueness": false
@@ -1169,7 +1169,7 @@
       "position": 108,
       "quantity": 3,
       "side_code": "runner",
-      "text": "[click]: Choose a rezzed piece of ice. That ice gains <strong>sentry</strong>, <strong>code gate</strong> or <strong>barrier</strong> until the end of the next run this turn.",
+      "text": "[click]: Choose a rezzed piece of ice. That ice gains **sentry**, **code gate** or **barrier** until the end of the next run this turn.",
       "title": "Paintbrush",
       "type_code": "program",
       "uniqueness": false
@@ -1204,7 +1204,7 @@
       "position": 31,
       "quantity": 3,
       "side_code": "runner",
-      "text": "Gain 1[credit] for each installed <strong>connection</strong> resource.",
+      "text": "Gain 1[credit] for each installed **connection** resource.",
       "title": "Calling in Favors",
       "type_code": "event",
       "uniqueness": false
@@ -1256,7 +1256,7 @@
       "position": 36,
       "quantity": 3,
       "side_code": "runner",
-      "text": "As an additional cost to play this event, spend [click].\nSearch your stack for a <strong>run</strong> event and play that <strong>run</strong> event (paying its play cost), ignoring any additional costs. Shuffle your stack.",
+      "text": "As an additional cost to play this event, spend [click].\nSearch your stack for a **run** event and play that **run** event (paying its play cost), ignoring any additional costs. Shuffle your stack.",
       "title": "Planned Assault",
       "type_code": "event",
       "uniqueness": false
@@ -1273,7 +1273,7 @@
       "position": 37,
       "quantity": 3,
       "side_code": "runner",
-      "text": "+1[mu]\nYour maximum hand size is increased by 1.\nWhenever the Corp scores an agenda, you may search your stack for a card and add it to your grip. Shuffle your stack.\nLimit 1 <strong>console</strong> per player.",
+      "text": "+1[mu]\nYour maximum hand size is increased by 1.\nWhenever the Corp scores an agenda, you may search your stack for a card and add it to your grip. Shuffle your stack.\nLimit 1 **console** per player.",
       "title": "Logos",
       "type_code": "hardware",
       "uniqueness": true
@@ -1292,7 +1292,7 @@
       "quantity": 3,
       "side_code": "runner",
       "strength": 2,
-      "text": "2[credit]: Break up to 3 <strong>barrier</strong> subroutines.\n2[credit]: +4 strength.\nBreach cannot be used on ice protecting a remote server.",
+      "text": "2[credit]: Break up to 3 **barrier** subroutines.\n2[credit]: +4 strength.\nBreach cannot be used on ice protecting a remote server.",
       "title": "Breach",
       "type_code": "program",
       "uniqueness": false
@@ -1312,7 +1312,7 @@
       "quantity": 3,
       "side_code": "runner",
       "strength": 2,
-      "text": "1[credit]: Break <strong>tracer</strong> subroutine.\n2[credit]: +3 strength.",
+      "text": "1[credit]: Break **tracer** subroutine.\n2[credit]: +3 strength.",
       "title": "Gingerbread",
       "type_code": "program",
       "uniqueness": false
@@ -1348,7 +1348,7 @@
       "position": 48,
       "quantity": 3,
       "side_code": "runner",
-      "text": "When your turn begins, you may choose a server. The first time you make a successful run on that server this turn, instead of accessing cards, gain 2[credit].\n<errata>Errata from FAQ 4.0</errata>",
+      "text": "When your turn begins, you may choose a server. The first time you make a successful run on that server this turn, instead of accessing cards, gain 2[credit].\n*Errata from FAQ 4.0*",
       "title": "Security Testing",
       "type_code": "resource",
       "uniqueness": false
@@ -1385,7 +1385,7 @@
       "quantity": 3,
       "side_code": "runner",
       "strength": 0,
-      "text": "Place 1 power counter on Overmind when it is installed for each unused MU.\n<strong>Hosted power counter:</strong> Break ice subroutine.\n1[credit]: +1 strength.",
+      "text": "Place 1 power counter on Overmind when it is installed for each unused MU.\n**Hosted power counter:** Break ice subroutine.\n1[credit]: +1 strength.",
       "title": "Overmind",
       "type_code": "program",
       "uniqueness": false
@@ -1458,7 +1458,7 @@
       "position": 33,
       "quantity": 3,
       "side_code": "runner",
-      "text": "Place 3 power counters on D4v1d when it is installed.\n<strong>Hosted power counter:</strong> Break ice subroutine on a piece of ice that has a strength of 5 or greater.",
+      "text": "Place 3 power counters on D4v1d when it is installed.\n**Hosted power counter:** Break ice subroutine on a piece of ice that has a strength of 5 or greater.",
       "title": "D4v1d",
       "type_code": "program",
       "uniqueness": false
@@ -1476,7 +1476,7 @@
       "position": 34,
       "quantity": 3,
       "side_code": "runner",
-      "text": "This card is not trashed until another <strong>current</strong> is played or an agenda is scored.\nThe first piece of ice encountered each turn has -2 strength for the remainder of the run.",
+      "text": "This card is not trashed until another **current** is played or an agenda is scored.\nThe first piece of ice encountered each turn has -2 strength for the remainder of the run.",
       "title": "Scrubbed",
       "type_code": "event",
       "uniqueness": false
@@ -1495,7 +1495,7 @@
       "position": 36,
       "quantity": 3,
       "side_code": "runner",
-      "text": "This card is not trashed until another <strong>current</strong> is played or an agenda is scored.\nThe Corp cannot install more than 1 piece of ice each turn.",
+      "text": "This card is not trashed until another **current** is played or an agenda is scored.\nThe Corp cannot install more than 1 piece of ice each turn.",
       "title": "Unscheduled Maintenance",
       "type_code": "event",
       "uniqueness": false
@@ -1515,7 +1515,7 @@
       "position": 37,
       "quantity": 3,
       "side_code": "runner",
-      "text": "Place 3 virus counters on Cache when it is installed.\n<strong>Hosted virus counter:</strong> Gain 1[credit].",
+      "text": "Place 3 virus counters on Cache when it is installed.\n**Hosted virus counter:** Gain 1[credit].",
       "title": "Cache",
       "type_code": "program",
       "uniqueness": false
@@ -1534,7 +1534,7 @@
       "position": 38,
       "quantity": 3,
       "side_code": "runner",
-      "text": "This card is not trashed until another <strong>current</strong> is played or an agenda is scored.\n1[recurring-credit]\nUse this credit during a run.",
+      "text": "This card is not trashed until another **current** is played or an agenda is scored.\n1[recurring-credit]\nUse this credit during a run.",
       "title": "Net Celebrity",
       "type_code": "event",
       "uniqueness": false
@@ -1552,7 +1552,7 @@
       "position": 55,
       "quantity": 3,
       "side_code": "runner",
-      "text": "+2[mu]\nYour maximum hand size is increased by 2.\nLimit 1 <strong>console</strong> per player.",
+      "text": "+2[mu]\nYour maximum hand size is increased by 2.\nLimit 1 **console** per player.",
       "title": "Box-E",
       "type_code": "hardware",
       "uniqueness": true
@@ -1643,7 +1643,7 @@
       "position": 79,
       "quantity": 3,
       "side_code": "runner",
-      "text": "+1[mu]\nDraw 1 card whenever the Corp creates a server.\nLimit 1 <strong>console</strong> per player.",
+      "text": "+1[mu]\nDraw 1 card whenever the Corp creates a server.\nLimit 1 **console** per player.",
       "title": "Astrolabe",
       "type_code": "hardware",
       "uniqueness": true
@@ -1664,7 +1664,7 @@
       "quantity": 3,
       "side_code": "runner",
       "strength": 0,
-      "text": "Place 4 power counters on Cerberus \"Cuj.0\" H3 when it is installed.\n<strong>Hosted power counter:</strong> Break up to 2 <strong>sentry</strong> subroutines.\n1[credit]: +1 strength.",
+      "text": "Place 4 power counters on Cerberus \"Cuj.0\" H3 when it is installed.\n**Hosted power counter:** Break up to 2 **sentry** subroutines.\n1[credit]: +1 strength.",
       "title": "Cerberus \"Cuj.0\" H3",
       "type_code": "program",
       "uniqueness": false
@@ -1685,7 +1685,7 @@
       "quantity": 3,
       "side_code": "runner",
       "strength": 1,
-      "text": "Place 4 power counters on Cerberus \"Rex\" H2 when it is installed.\n<strong>Hosted power counter:</strong> Break up to 2 <strong>code gate</strong> subroutines.\n1[credit]: +1 strength.",
+      "text": "Place 4 power counters on Cerberus \"Rex\" H2 when it is installed.\n**Hosted power counter:** Break up to 2 **code gate** subroutines.\n1[credit]: +1 strength.",
       "title": "Cerberus \"Rex\" H2",
       "type_code": "program",
       "uniqueness": false
@@ -1706,7 +1706,7 @@
       "quantity": 3,
       "side_code": "runner",
       "strength": 3,
-      "text": "Place 4 power counters on Cerberus \"Lady\" H1 when it is installed.\n<strong>Hosted power counter:</strong> Break up to 2 <strong>barrier</strong> subroutines.\n1[credit]: +1 strength.",
+      "text": "Place 4 power counters on Cerberus \"Lady\" H1 when it is installed.\n**Hosted power counter:** Break up to 2 **barrier** subroutines.\n1[credit]: +1 strength.",
       "title": "Cerberus \"Lady\" H1",
       "type_code": "program",
       "uniqueness": false
@@ -1744,7 +1744,7 @@
       "position": 113,
       "quantity": 3,
       "side_code": "runner",
-      "text": "When your turn begins, place 1 virus counter on Incubator.\n[click], [trash]: Move all virus counters from Incubator to another installed <strong>virus</strong> program.",
+      "text": "When your turn begins, place 1 virus counter on Incubator.\n[click], [trash]: Move all virus counters from Incubator to another installed **virus** program.",
       "title": "Incubator",
       "type_code": "program",
       "uniqueness": false
@@ -1783,7 +1783,7 @@
       "quantity": 3,
       "side_code": "runner",
       "strength": 0,
-      "text": "Sage has +1 strength for each unused MU.\n2[credit]: Break <strong>code gate</strong> or <strong>barrier</strong> subroutine.",
+      "text": "Sage has +1 strength for each unused MU.\n2[credit]: Break **code gate** or **barrier** subroutine.",
       "title": "Sage",
       "type_code": "program",
       "uniqueness": false
@@ -1909,7 +1909,7 @@
       "position": 37,
       "quantity": 3,
       "side_code": "runner",
-      "text": "Make a run. The first time you break all subroutines on a <strong>sentry</strong> during this run, trash that <strong>sentry</strong>.",
+      "text": "Make a run. The first time you break all subroutines on a **sentry** during this run, trash that **sentry**.",
       "title": "Forked",
       "type_code": "event",
       "uniqueness": false
@@ -1927,7 +1927,7 @@
       "position": 38,
       "quantity": 3,
       "side_code": "runner",
-      "text": "Make a run. The first time you break all subroutines on a <strong>barrier</strong> during this run, trash that <strong>barrier</strong>.",
+      "text": "Make a run. The first time you break all subroutines on a **barrier** during this run, trash that **barrier**.",
       "title": "Knifed",
       "type_code": "event",
       "uniqueness": false
@@ -1945,7 +1945,7 @@
       "position": 39,
       "quantity": 3,
       "side_code": "runner",
-      "text": "Make a run. The first time you break all subroutines on a <strong>code gate</strong> during this run, trash that <strong>code gate</strong>.",
+      "text": "Make a run. The first time you break all subroutines on a **code gate** during this run, trash that **code gate**.",
       "title": "Spooned",
       "type_code": "event",
       "uniqueness": false
@@ -1986,7 +1986,7 @@
       "position": 41,
       "quantity": 3,
       "side_code": "runner",
-      "text": "Whenever an installed Corp card is trashed, place 1 virus counter on Gravedigger.\n[click], <strong>hosted virus counter:</strong> The Corp trashes the top card of R&D.",
+      "text": "Whenever an installed Corp card is trashed, place 1 virus counter on Gravedigger.\n[click], **hosted virus counter:** The Corp trashes the top card of R&D.",
       "title": "Gravedigger",
       "type_code": "program",
       "uniqueness": false
@@ -2006,7 +2006,7 @@
       "position": 42,
       "quantity": 3,
       "side_code": "runner",
-      "text": "Place 1 virus counter on Hivemind when it is installed.\nVirus counters on Hivemind are considered to be hosted on all other <strong>virus</strong> programs for the purposes of card effects (and can be spent as if on them).",
+      "text": "Place 1 virus counter on Hivemind when it is installed.\nVirus counters on Hivemind are considered to be hosted on all other **virus** programs for the purposes of card effects (and can be spent as if on them).",
       "title": "Hivemind",
       "type_code": "program",
       "uniqueness": true
@@ -2025,7 +2025,7 @@
       "position": 43,
       "quantity": 3,
       "side_code": "runner",
-      "text": "You may host a single <strong>virus</strong> program on Progenitor.\nThe memory cost of the hosted program does not count against your memory limit.\nWhenever virus counters are purged, instead of removing all virus counters from the hosted card, remove all but 1 virus counter from the hosted card.\n<errata>Errata from FAQ 4.0</errata>",
+      "text": "You may host a single **virus** program on Progenitor.\nThe memory cost of the hosted program does not count against your memory limit.\nWhenever virus counters are purged, instead of removing all virus counters from the hosted card, remove all but 1 virus counter from the hosted card.\n*Errata from FAQ 4.0*",
       "title": "Progenitor",
       "type_code": "program",
       "uniqueness": false
@@ -2079,7 +2079,7 @@
       "position": 47,
       "quantity": 3,
       "side_code": "runner",
-      "text": "+1[mu]\nWhen your turn begins, draw 1 card if the Corp has cards in HQ equal to his or her maximum hand size.\nLimit 1 <strong>console</strong> per player.",
+      "text": "+1[mu]\nWhen your turn begins, draw 1 card if the Corp has cards in HQ equal to his or her maximum hand size.\nLimit 1 **console** per player.",
       "title": "Vigil",
       "type_code": "hardware",
       "uniqueness": true
@@ -2194,7 +2194,7 @@
       "quantity": 3,
       "side_code": "runner",
       "strength": 0,
-      "text": "If you have at least 2[link], the memory cost of Spike is 0, even if it is not installed.\nSpike has +1 strength for each installed <strong>icebreaker</strong>.\n[trash]: Break up to 3 <strong>barrier</strong> subroutines.",
+      "text": "If you have at least 2[link], the memory cost of Spike is 0, even if it is not installed.\nSpike has +1 strength for each installed **icebreaker**.\n[trash]: Break up to 3 **barrier** subroutines.",
       "title": "Spike",
       "type_code": "program",
       "uniqueness": false
@@ -2231,7 +2231,7 @@
       "position": 21,
       "quantity": 3,
       "side_code": "runner",
-      "text": "This card is not trashed until another <strong>current</strong> is played or an agenda is scored.\nAs an additional cost to rez non-ice cards, the Corp must randomly trash a card from HQ.",
+      "text": "This card is not trashed until another **current** is played or an agenda is scored.\nAs an additional cost to rez non-ice cards, the Corp must randomly trash a card from HQ.",
       "title": "Hacktivist Meeting",
       "type_code": "event",
       "uniqueness": false
@@ -2250,7 +2250,7 @@
       "position": 22,
       "quantity": 3,
       "side_code": "runner",
-      "text": "Off-Campus Apartment can host any number of <strong>connections</strong>.\nWhenever you install a <strong>connection</strong> on Off-Campus Apartment, draw 1 card.",
+      "text": "Off-Campus Apartment can host any number of **connections**.\nWhenever you install a **connection** on Off-Campus Apartment, draw 1 card.",
       "title": "Off-Campus Apartment",
       "type_code": "resource",
       "uniqueness": false
@@ -2285,7 +2285,7 @@
       "position": 24,
       "quantity": 3,
       "side_code": "runner",
-      "text": "Place 4 power counters on Dorm Computer when you install it.\n[click], <strong>hosted power counter:</strong> Make a run. Avoid all tags for the remainder of the run.",
+      "text": "Place 4 power counters on Dorm Computer when you install it.\n[click], **hosted power counter:** Make a run. Avoid all tags for the remainder of the run.",
       "title": "Dorm Computer",
       "type_code": "hardware",
       "uniqueness": false
@@ -2321,7 +2321,7 @@
       "position": 27,
       "quantity": 3,
       "side_code": "runner",
-      "text": "+1[mu]\nThe first time you play an event each turn, you may play another event (without spending a click) after the first one resolves.\nLimit 1 <strong>console</strong> per player.",
+      "text": "+1[mu]\nThe first time you play an event each turn, you may play another event (without spending a click) after the first one resolves.\nLimit 1 **console** per player.",
       "title": "Comet",
       "type_code": "hardware",
       "uniqueness": true
@@ -2342,7 +2342,7 @@
       "quantity": 3,
       "side_code": "runner",
       "strength": 0,
-      "text": "Study Guide has +1 strength for each power counter on it.\n1[credit]: Break <strong>code gate</strong> subroutine.\n2[credit]: Place 1 power counter on Study Guide.",
+      "text": "Study Guide has +1 strength for each power counter on it.\n1[credit]: Break **code gate** subroutine.\n2[credit]: Place 1 power counter on Study Guide.",
       "title": "Study Guide",
       "type_code": "program",
       "uniqueness": false
@@ -2360,7 +2360,7 @@
       "position": 43,
       "quantity": 3,
       "side_code": "runner",
-      "text": "+1[mu]\nWhenever you steal an agenda, you may swap that agenda with an agenda in the Corp's score area.\nLimit 1 <strong>console</strong> per player.",
+      "text": "+1[mu]\nWhenever you steal an agenda, you may swap that agenda with an agenda in the Corp's score area.\nLimit 1 **console** per player.",
       "title": "Turntable",
       "type_code": "hardware",
       "uniqueness": true
@@ -2398,7 +2398,7 @@
       "quantity": 3,
       "side_code": "runner",
       "strength": 0,
-      "text": "If you have at least 2[link], the memory cost of Crowbar is 0, even if it is not installed.\nCrowbar has +1 strength for each installed <strong>icebreaker</strong>.\n[trash]: Break up to 3 <strong>code gate</strong> subroutines.",
+      "text": "If you have at least 2[link], the memory cost of Crowbar is 0, even if it is not installed.\nCrowbar has +1 strength for each installed **icebreaker**.\n[trash]: Break up to 3 **code gate** subroutines.",
       "title": "Crowbar",
       "type_code": "program",
       "uniqueness": false
@@ -2416,7 +2416,7 @@
       "position": 47,
       "quantity": 3,
       "side_code": "runner",
-      "text": "When you install Net-Ready Eyes, suffer 2 meat damage.\nWhenever you initiate a run, choose an <strong>icebreaker</strong>. That <strong>icebreaker</strong> has +1 strength for the remainder of the run.",
+      "text": "When you install Net-Ready Eyes, suffer 2 meat damage.\nWhenever you initiate a run, choose an **icebreaker**. That **icebreaker** has +1 strength for the remainder of the run.",
       "title": "Net-Ready Eyes",
       "type_code": "hardware",
       "uniqueness": true
@@ -2437,7 +2437,7 @@
       "quantity": 3,
       "side_code": "runner",
       "strength": 2,
-      "text": "<strong>Trash a card from your grip:</strong> Break ice subroutine.\n<strong>Trash a card from your grip:</strong> +2 strength.",
+      "text": "**Trash a card from your grip:** Break ice subroutine.\n**Trash a card from your grip:** +2 strength.",
       "title": "Faust",
       "type_code": "program",
       "uniqueness": false
@@ -2493,7 +2493,7 @@
       "position": 65,
       "quantity": 3,
       "side_code": "runner",
-      "text": "+1[link]\n[trash]: Avoid or remove 1 tag.\nLimit 1 <strong>console</strong> per player.",
+      "text": "+1[link]\n[trash]: Avoid or remove 1 tag.\nLimit 1 **console** per player.",
       "title": "Forger",
       "type_code": "hardware",
       "uniqueness": false
@@ -2513,7 +2513,7 @@
       "quantity": 3,
       "side_code": "runner",
       "strength": 0,
-      "text": "If you have at least 2[link], the memory cost of Shiv is 0, even if it is not installed.\nShiv has +1 strength for each installed <strong>icebreaker</strong>.\n[trash]: Break up to 3 <strong>sentry</strong> subroutines.",
+      "text": "If you have at least 2[link], the memory cost of Shiv is 0, even if it is not installed.\nShiv has +1 strength for each installed **icebreaker**.\n[trash]: Break up to 3 **sentry** subroutines.",
       "title": "Shiv",
       "type_code": "program",
       "uniqueness": false
@@ -2570,7 +2570,7 @@
       "position": 81,
       "quantity": 3,
       "side_code": "runner",
-      "text": "When your turn begins, place 1 power counter on Trope.\n[click], <strong>remove Trope from the game:</strong> Shuffle 1 card from your heap into your stack for each power counter on Trope.",
+      "text": "When your turn begins, place 1 power counter on Trope.\n[click], **remove Trope from the game:** Shuffle 1 card from your heap into your stack for each power counter on Trope.",
       "title": "Trope",
       "type_code": "program",
       "uniqueness": false
@@ -2664,7 +2664,7 @@
       "position": 102,
       "quantity": 3,
       "side_code": "runner",
-      "text": "2[credit]: Swap a piece of <strong>barrier</strong> ice currently being encountered with a piece of ice directly before or after it. The run continues from this new position. You are still encountering that ice.",
+      "text": "2[credit]: Swap a piece of **barrier** ice currently being encountered with a piece of ice directly before or after it. The run continues from this new position. You are still encountering that ice.",
       "title": "Surfer",
       "type_code": "program",
       "uniqueness": false
@@ -2757,7 +2757,7 @@
       "position": 108,
       "quantity": 3,
       "side_code": "runner",
-      "text": "As an additional cost to spend [click] to trash a resource (not through a card ability), the Corp must pay 2[credit].\n<errata>Errata from FAQ 3.0.1</errata>",
+      "text": "As an additional cost to spend [click] to trash a resource (not through a card ability), the Corp must pay 2[credit].\n*Errata from FAQ 3.0.1*",
       "title": "Wireless Net Pavilion",
       "type_code": "resource",
       "uniqueness": true
@@ -2793,7 +2793,7 @@
       "position": 32,
       "quantity": 3,
       "side_code": "runner",
-      "text": "+1[mu]\n<strong>Trash an installed card:</strong> Prevent 1 damage.\nLimit 1 <strong>console</strong> per player.",
+      "text": "+1[mu]\n**Trash an installed card:** Prevent 1 damage.\nLimit 1 **console** per player.",
       "title": "Heartbeat",
       "type_code": "hardware",
       "uniqueness": true
@@ -2867,7 +2867,7 @@
       "position": 38,
       "quantity": 3,
       "side_code": "runner",
-      "text": "Trash up to 5 of your installed cards. Draw 1 card for each card trashed (or 2 cards for each card trashed if you trashed at least 1 <strong>directive</strong>).",
+      "text": "Trash up to 5 of your installed cards. Draw 1 card for each card trashed (or 2 cards for each card trashed if you trashed at least 1 **directive**).",
       "title": "Independent Thinking",
       "type_code": "event",
       "uniqueness": false
@@ -2885,7 +2885,7 @@
       "position": 39,
       "quantity": 3,
       "side_code": "runner",
-      "text": "+X[mu]\nYour maximum hand size is increased by X.\nX is equal to the number of agenda points you have.\nLimit 1 <strong>console</strong> per player.",
+      "text": "+X[mu]\nYour maximum hand size is increased by X.\nX is equal to the number of agenda points you have.\nLimit 1 **console** per player.",
       "title": "Brain Chip",
       "type_code": "hardware",
       "uniqueness": true
@@ -2923,7 +2923,7 @@
       "position": 41,
       "quantity": 3,
       "side_code": "runner",
-      "text": "Your first [click] each turn must be spent to make a run or play a <strong>run</strong> event.\nOnce per turn, you can spend [click][click] to break a subroutine on a piece of ice currently being encountered.",
+      "text": "Your first [click] each turn must be spent to make a run or play a **run** event.\nOnce per turn, you can spend [click][click] to break a subroutine on a piece of ice currently being encountered.",
       "title": "Always Be Running",
       "type_code": "resource",
       "uniqueness": true
@@ -2961,7 +2961,7 @@
       "position": 43,
       "quantity": 3,
       "side_code": "runner",
-      "text": "The first time each turn you access a card with a trash cost, reveal it. You must trash that card by paying its trash cost, if able.\nWhenever you access cards from HQ, access 1 additional card.\n<errata>Errata from CR 1.2</errata>",
+      "text": "The first time each turn you access a card with a trash cost, reveal it. You must trash that card by paying its trash cost, if able.\nWhenever you access cards from HQ, access 1 additional card.\n*Errata from CR 1.2*",
       "title": "Neutralize All Threats",
       "type_code": "resource",
       "uniqueness": true
@@ -2998,7 +2998,7 @@
       "position": 47,
       "quantity": 3,
       "side_code": "runner",
-      "text": "+1[mu] +1[link]\nOnce per turn, when you encounter a piece of ice, you may force the Corp to \"<trace>trace 5</trace> If successful, give the Runner 1 tag and end the run. If unsuccessful, the Runner bypasses the currently encountered ice.\"\nLimit 1 <strong>console</strong> per player.",
+      "text": "+1[mu] +1[link]\nOnce per turn, when you encounter a piece of ice, you may force the Corp to \"**trace 5** If successful, give the Runner 1 tag and end the run. If unsuccessful, the Runner bypasses the currently encountered ice.\"\nLimit 1 **console** per player.",
       "title": "Security Nexus",
       "type_code": "hardware",
       "uniqueness": true
@@ -3019,7 +3019,7 @@
       "quantity": 3,
       "side_code": "runner",
       "strength": 1,
-      "text": "If you have at least 2[link], the memory cost of GS Striker M1 is 0, even if it is not installed.\n2[credit]: Break any number of <strong>code gate</strong> subroutines.\n2[credit]: +3 strength.",
+      "text": "If you have at least 2[link], the memory cost of GS Striker M1 is 0, even if it is not installed.\n2[credit]: Break any number of **code gate** subroutines.\n2[credit]: +3 strength.",
       "title": "GS Striker M1",
       "type_code": "program",
       "uniqueness": false
@@ -3040,7 +3040,7 @@
       "quantity": 3,
       "side_code": "runner",
       "strength": 1,
-      "text": "If you have at least 2[link], the memory cost of GS Shrike M2 is 0, even if it is not installed.\n2[credit]: Break any number of <strong>sentry</strong> subroutines.\n2[credit]: +3 strength.",
+      "text": "If you have at least 2[link], the memory cost of GS Shrike M2 is 0, even if it is not installed.\n2[credit]: Break any number of **sentry** subroutines.\n2[credit]: +3 strength.",
       "title": "GS Shrike M2",
       "type_code": "program",
       "uniqueness": false
@@ -3061,7 +3061,7 @@
       "quantity": 3,
       "side_code": "runner",
       "strength": 1,
-      "text": "If you have at least 2[link], the memory cost of GS Sherman M3 is 0, even if it is not installed.\n2[credit]: Break any number of <strong>barrier</strong> subroutines.\n2[credit]: +3 strength.",
+      "text": "If you have at least 2[link], the memory cost of GS Sherman M3 is 0, even if it is not installed.\n2[credit]: Break any number of **barrier** subroutines.\n2[credit]: +3 strength.",
       "title": "GS Sherman M3",
       "type_code": "program",
       "uniqueness": false
@@ -3099,7 +3099,7 @@
       "position": 53,
       "quantity": 3,
       "side_code": "runner",
-      "text": "This card is not trashed until another <strong>current</strong> is played or an agenda is scored.\nThe Corp's identity text box is blank.",
+      "text": "This card is not trashed until another **current** is played or an agenda is scored.\nThe Corp's identity text box is blank.",
       "title": "Employee Strike",
       "type_code": "event",
       "uniqueness": false
@@ -3175,7 +3175,7 @@
       "quantity": 3,
       "side_code": "runner",
       "strength": 1,
-      "text": "You cannot use Mongoose to break subroutines on more than one ice per run.\n1[credit]: Break up to 2 <strong>sentry</strong> subroutines.\n2[credit]: +2 strength.",
+      "text": "You cannot use Mongoose to break subroutines on more than one ice per run.\n1[credit]: Break up to 2 **sentry** subroutines.\n2[credit]: +2 strength.",
       "title": "Mongoose",
       "type_code": "program",
       "uniqueness": false
@@ -3194,7 +3194,7 @@
       "position": 8,
       "quantity": 3,
       "side_code": "runner",
-      "text": "Once per turn, when you encounter a piece of ice, you may have it gain 1 subtype of your choice that is not <strong>sentry</strong>, <strong>code gate</strong>, or <strong>barrier</strong> for the remainder of this run.",
+      "text": "Once per turn, when you encounter a piece of ice, you may have it gain 1 subtype of your choice that is not **sentry**, **code gate**, or **barrier** for the remainder of this run.",
       "title": "Panchatantra",
       "type_code": "program",
       "uniqueness": false
@@ -3213,7 +3213,7 @@
       "position": 9,
       "quantity": 3,
       "side_code": "runner",
-      "text": "<strong>Forfeit an agenda:</strong> Search your stack for a card and install it (paying the install cost). Shuffle your stack.",
+      "text": "**Forfeit an agenda:** Search your stack for a card and install it (paying the install cost). Shuffle your stack.",
       "title": "Artist Colony",
       "type_code": "resource",
       "uniqueness": false
@@ -3269,7 +3269,7 @@
       "position": 25,
       "quantity": 3,
       "side_code": "runner",
-      "text": "This card is not trashed until another <strong>current</strong> is played or an agenda is scored.\nThe Corp has 1 additional bad publicity (even if they have 0).",
+      "text": "This card is not trashed until another **current** is played or an agenda is scored.\nThe Corp has 1 additional bad publicity (even if they have 0).",
       "title": "Corporate Scandal",
       "type_code": "event",
       "uniqueness": false
@@ -3306,7 +3306,7 @@
       "position": 43,
       "quantity": 3,
       "side_code": "runner",
-      "text": "Install only if you made a successful run on HQ this turn.\n[trash], <strong>pay the trash cost of a rezzed card:</strong> Trash that card.",
+      "text": "Install only if you made a successful run on HQ this turn.\n[trash], **pay the trash cost of a rezzed card:** Trash that card.",
       "title": "Political Operative",
       "type_code": "resource",
       "uniqueness": false
@@ -3324,7 +3324,7 @@
       "position": 45,
       "quantity": 3,
       "side_code": "runner",
-      "text": "This card is not trashed until another <strong>current</strong> is played or an agenda is scored.\nWhen you steal an agenda, add \"Freedom Through Equality\" to your score area as an agenda worth 1 agenda point.",
+      "text": "This card is not trashed until another **current** is played or an agenda is scored.\nWhen you steal an agenda, add \"Freedom Through Equality\" to your score area as an agenda worth 1 agenda point.",
       "title": "\"Freedom Through Equality\"",
       "type_code": "event",
       "uniqueness": false
@@ -3362,7 +3362,7 @@
       "position": 59,
       "quantity": 3,
       "side_code": "runner",
-      "text": "Once per turn, you may pay the trash cost of a card you access that is not in Archives to remove that card from the game.\n<errata>Errata from FAQ 4.1</errata>",
+      "text": "Once per turn, you may pay the trash cost of a card you access that is not in Archives to remove that card from the game.\n*Errata from FAQ 4.1*",
       "title": "Salsette Slums",
       "type_code": "resource",
       "uniqueness": false
@@ -3400,7 +3400,7 @@
       "quantity": 3,
       "side_code": "runner",
       "strength": 3,
-      "text": "1[credit]: Break up to 2 ice subroutines.\n2[credit]: +1 strength.\nWhenever an encounter with a piece of ice in which you used Brahman to break a subroutine ends, add 1 installed non-<strong>virus</strong> program to the top of your stack.",
+      "text": "1[credit]: Break up to 2 ice subroutines.\n2[credit]: +1 strength.\nWhenever an encounter with a piece of ice in which you used Brahman to break a subroutine ends, add 1 installed non-**virus** program to the top of your stack.",
       "title": "Brahman",
       "type_code": "program",
       "uniqueness": false
@@ -3473,7 +3473,7 @@
       "position": 85,
       "quantity": 3,
       "side_code": "runner",
-      "text": "Whenever a run on HQ or R&D ends, place 1 power counter on The Turning Wheel if you stole no agendas during the run.\n<strong>2 hosted power counters:</strong> For the remainder of this run, access 1 additional card from HQ or R&D.",
+      "text": "Whenever a run on HQ or R&D ends, place 1 power counter on The Turning Wheel if you stole no agendas during the run.\n**2 hosted power counters:** For the remainder of this run, access 1 additional card from HQ or R&D.",
       "title": "The Turning Wheel",
       "type_code": "resource",
       "uniqueness": true
@@ -3528,7 +3528,7 @@
       "position": 99,
       "quantity": 3,
       "side_code": "runner",
-      "text": "The Corp cannot win the game except if you are flatlined.\nWhen your turn begins, place 1 power counter on The Black File. When there are 3 or more power counters on The Black File, remove it from the game.\nLimit 1 per deck.\n<errata>Errata from CR 1.2</errata>",
+      "text": "The Corp cannot win the game except if you are flatlined.\nWhen your turn begins, place 1 power counter on The Black File. When there are 3 or more power counters on The Black File, remove it from the game.\nLimit 1 per deck.\n*Errata from CR 1.2*",
       "title": "The Black File",
       "type_code": "resource",
       "uniqueness": true
@@ -3548,7 +3548,7 @@
       "quantity": 3,
       "side_code": "runner",
       "strength": 0,
-      "text": "If you use Ankusa to break all subroutines on a <strong>barrier</strong> during a single encounter, add that <strong>barrier</strong> to HQ.\n2[credit]: Break <strong>barrier</strong> subroutine.\n1[credit]: +1 strength.",
+      "text": "If you use Ankusa to break all subroutines on a **barrier** during a single encounter, add that **barrier** to HQ.\n2[credit]: Break **barrier** subroutine.\n1[credit]: +1 strength.",
       "title": "Ankusa",
       "type_code": "program",
       "uniqueness": false
@@ -3585,7 +3585,7 @@
       "position": 22,
       "quantity": 3,
       "side_code": "runner",
-      "text": "This card is not trashed until another <strong>current</strong> is played or an agenda is scored.\nThe text box of each unique non-<strong>region</strong> asset and upgrade is blank.",
+      "text": "This card is not trashed until another **current** is played or an agenda is scored.\nThe text box of each unique non-**region** asset and upgrade is blank.",
       "title": "Rumor Mill",
       "type_code": "event",
       "uniqueness": false
@@ -3606,7 +3606,7 @@
       "quantity": 3,
       "side_code": "runner",
       "strength": 1,
-      "text": "Whenever you encounter a <strong>barrier</strong>, you may install Paperclip from your heap (paying its install cost).\nX[credit]: +X strength. Break up to X <strong>barrier</strong> subroutines, if able.",
+      "text": "Whenever you encounter a **barrier**, you may install Paperclip from your heap (paying its install cost).\nX[credit]: +X strength. Break up to X **barrier** subroutines, if able.",
       "title": "Paperclip",
       "type_code": "program",
       "uniqueness": false
@@ -3662,7 +3662,7 @@
       "position": 41,
       "quantity": 3,
       "side_code": "runner",
-      "text": "+1[mu]\nYour maximum hand size is increased by 1 for each tag you have.\nThe first time a successful run on R&D or HQ ends each turn, draw 1 card for each card you accessed during that run.\nLimit 1 <strong>console</strong> per player.",
+      "text": "+1[mu]\nYour maximum hand size is increased by 1 for each tag you have.\nThe first time a successful run on R&D or HQ ends each turn, draw 1 card for each card you accessed during that run.\nLimit 1 **console** per player.",
       "title": "Obelus",
       "type_code": "hardware",
       "uniqueness": true
@@ -3683,7 +3683,7 @@
       "quantity": 3,
       "side_code": "runner",
       "strength": 2,
-      "text": "Whenever you encounter a <strong>code gate</strong>, you may install Black Orchestra from your heap (paying its install cost).\n3[credit]: +2 strength. Break up to 2 <strong>code gate</strong> subroutines, if able.",
+      "text": "Whenever you encounter a **code gate**, you may install Black Orchestra from your heap (paying its install cost).\n3[credit]: +2 strength. Break up to 2 **code gate** subroutines, if able.",
       "title": "Black Orchestra",
       "type_code": "program",
       "uniqueness": false
@@ -3757,7 +3757,7 @@
       "position": 63,
       "quantity": 3,
       "side_code": "runner",
-      "text": "+2[mu]\nWhenever you access cards from HQ during a run, access 1 additional card for each piece of ice protecting HQ that you broke all subroutines on during this run.\nLimit 1 <strong>console</strong> per player.",
+      "text": "+2[mu]\nWhenever you access cards from HQ during a run, access 1 additional card for each piece of ice protecting HQ that you broke all subroutines on during this run.\nLimit 1 **console** per player.",
       "title": "The Gauntlet",
       "type_code": "hardware",
       "uniqueness": true
@@ -3813,7 +3813,7 @@
       "position": 70,
       "quantity": 3,
       "side_code": "runner",
-      "text": "If you are tagged when your turn ends, force the Corp to \"<trace>Trace 1</trace> If unsuccessful, the Runner removes 1 tag.\"\n[trash],<strong>trash all cards in your grip:</strong> Prevent all meat damage.",
+      "text": "If you are tagged when your turn ends, force the Corp to \"**Trace 1** If unsuccessful, the Runner removes 1 tag.\"\n[trash],**trash all cards in your grip:** Prevent all meat damage.",
       "title": "Citadel Sanctuary",
       "type_code": "resource",
       "uniqueness": true
@@ -3834,7 +3834,7 @@
       "quantity": 3,
       "side_code": "runner",
       "strength": 1,
-      "text": "Whenever you encounter a <strong>sentry</strong>, you may install MKUltra from your heap (paying its install cost).\n3[credit]: +2 strength. Break up to 2 <strong>sentry</strong> subroutines, if able.",
+      "text": "Whenever you encounter a **sentry**, you may install MKUltra from your heap (paying its install cost).\n3[credit]: +2 strength. Break up to 2 **sentry** subroutines, if able.",
       "title": "MKUltra",
       "type_code": "program",
       "uniqueness": false
@@ -3931,7 +3931,7 @@
       "quantity": 3,
       "side_code": "runner",
       "strength": 0,
-      "text": "You may host any number of non-<strong>AI icebreaker</strong> programs on Baba Yaga.\nBaba Yaga gains the paid abilities of all hosted <strong>icebreaker</strong> programs.",
+      "text": "You may host any number of non-**AI icebreaker** programs on Baba Yaga.\nBaba Yaga gains the paid abilities of all hosted **icebreaker** programs.",
       "title": "Baba Yaga",
       "type_code": "program",
       "uniqueness": false
@@ -3949,7 +3949,7 @@
       "position": 101,
       "quantity": 3,
       "side_code": "runner",
-      "text": "+2[mu]\nOnce per turn, when you encounter a piece of ice, you may reduce your maximum hand size by 1 until the beginning of your next turn. If you do, the strength of that ice is lowered to 0 for the remainder of the encounter.\nLimit 1 <strong>console</strong> per player.",
+      "text": "+2[mu]\nOnce per turn, when you encounter a piece of ice, you may reduce your maximum hand size by 1 until the beginning of your next turn. If you do, the strength of that ice is lowered to 0 for the remainder of the encounter.\nLimit 1 **console** per player.",
       "title": "\u015eifr",
       "type_code": "hardware",
       "uniqueness": true
@@ -3987,7 +3987,7 @@
       "position": 106,
       "quantity": 3,
       "side_code": "runner",
-      "text": "Whenever an agenda is scored or stolen, place 2 power counters on Aaron Marr\u00f3n.\n<strong>Hosted power counter:</strong> Remove 1 tag and draw 1 card.",
+      "text": "Whenever an agenda is scored or stolen, place 2 power counters on Aaron Marr\u00f3n.\n**Hosted power counter:** Remove 1 tag and draw 1 card.",
       "title": "Aaron Marr\u00f3n",
       "type_code": "resource",
       "uniqueness": true
@@ -4023,7 +4023,7 @@
       "position": 2,
       "quantity": 3,
       "side_code": "runner",
-      "text": "+2[mu]\nThe first time each turn you access a card not in Archives and do not steal or trash it, the Corp must trash 1 card from HQ at random.\nLimit 1 <strong>console</strong> per player.",
+      "text": "+2[mu]\nThe first time each turn you access a card not in Archives and do not steal or trash it, the Corp must trash 1 card from HQ at random.\nLimit 1 **console** per player.",
       "title": "Maw",
       "type_code": "hardware",
       "uniqueness": true
@@ -4042,7 +4042,7 @@
       "position": 3,
       "quantity": 3,
       "side_code": "runner",
-      "text": "+1[link]\nWhenever the Corp scores an <strong>initiative</strong> or <strong>security</strong> agenda, force the Corp to \"<trace>Trace 1</trace> if unsuccessful, take 1 bad publicity.\"",
+      "text": "+1[link]\nWhenever the Corp scores an **initiative** or **security** agenda, force the Corp to \"**Trace 1** if unsuccessful, take 1 bad publicity.\"",
       "title": "The Archivist",
       "type_code": "resource",
       "uniqueness": true
@@ -4079,7 +4079,7 @@
       "position": 21,
       "quantity": 3,
       "side_code": "runner",
-      "text": "[click]: Make a run on R&D or HQ and trash 2 or more cards from your grip. Whenever you access cards from that server during this run, access 1 additional card for every 2 cards trashed.\n<errata>Errata from FAQ 4.0</errata>",
+      "text": "[click]: Make a run on R&D or HQ and trash 2 or more cards from your grip. Whenever you access cards from that server during this run, access 1 additional card for every 2 cards trashed.\n*Errata from FAQ 4.0*",
       "title": "Severnius Stim Implant",
       "type_code": "hardware",
       "uniqueness": false
@@ -4171,7 +4171,7 @@
       "position": 45,
       "quantity": 3,
       "side_code": "runner",
-      "text": "[click], <strong>remove an installed program from the game</strong>: Search your stack for a non-<strong>virus</strong> program, shuffle your stack, then install that program, lowering the install cost by the cost of the program removed from the game.",
+      "text": "[click], **remove an installed program from the game**: Search your stack for a non-**virus** program, shuffle your stack, then install that program, lowering the install cost by the cost of the program removed from the game.",
       "title": "Rosetta 2.0",
       "type_code": "resource",
       "uniqueness": false
@@ -4190,7 +4190,7 @@
       "position": 46,
       "quantity": 3,
       "side_code": "runner",
-      "text": "Install Adjusted Matrix on an <strong>icebreaker</strong>. Host <strong>icebreaker</strong> gains <strong>AI</strong> and \"You may spend [click] to break any subroutine on a piece of ice currently being encountered.\"\n<errata>Errata from FAQ 4.1</errata>",
+      "text": "Install Adjusted Matrix on an **icebreaker**. Host **icebreaker** gains **AI** and \"You may spend [click] to break any subroutine on a piece of ice currently being encountered.\"\n*Errata from FAQ 4.1*",
       "title": "Adjusted Matrix",
       "type_code": "hardware",
       "uniqueness": false
@@ -4209,7 +4209,7 @@
       "position": 47,
       "quantity": 3,
       "side_code": "runner",
-      "text": "Install Dedicated Processor on a non-<strong>AI icebreaker</strong>.\nHost <strong>icebreaker</strong> gains \"2[credit]: +4 strength.\"",
+      "text": "Install Dedicated Processor on a non-**AI icebreaker**.\nHost **icebreaker** gains \"2[credit]: +4 strength.\"",
       "title": "Dedicated Processor",
       "type_code": "hardware",
       "uniqueness": false
@@ -4229,7 +4229,7 @@
       "quantity": 3,
       "side_code": "runner",
       "strength": 2,
-      "text": "The first time you pass a piece of ice each turn in which you used Inversificator to break all subroutines, you may swap that ice with another piece of ice.\n1[credit]: Break <strong>code gate</strong> subroutine.\n1[credit]: +1 strength.",
+      "text": "The first time you pass a piece of ice each turn in which you used Inversificator to break all subroutines, you may swap that ice with another piece of ice.\n1[credit]: Break **code gate** subroutine.\n1[credit]: +1 strength.",
       "title": "Inversificator",
       "type_code": "program",
       "uniqueness": false
@@ -4247,7 +4247,7 @@
       "position": 62,
       "quantity": 3,
       "side_code": "runner",
-      "text": "When you install Jarogniew Mercs, take 1 tag. Place 3 power counters on Jarogniew Mercs, and 1 additional power counter for each tag you have. When there are no power counters left on Jarogniew Mercs, trash it.\nThe Corp cannot trash Jarogniew Mercs while there is another resource installed.\n<strong>Hosted power counter:</strong> Prevent 1 meat damage.",
+      "text": "When you install Jarogniew Mercs, take 1 tag. Place 3 power counters on Jarogniew Mercs, and 1 additional power counter for each tag you have. When there are no power counters left on Jarogniew Mercs, trash it.\nThe Corp cannot trash Jarogniew Mercs while there is another resource installed.\n**Hosted power counter:** Prevent 1 meat damage.",
       "title": "Jarogniew Mercs",
       "type_code": "resource",
       "uniqueness": true
@@ -4266,7 +4266,7 @@
       "position": 66,
       "quantity": 3,
       "side_code": "runner",
-      "text": "+2[mu]\nThe first time you initiate a run on a server protected by 2 or more pieces of ice each turn, draw 2 cards.\nLimit 1 <strong>console</strong> per player.",
+      "text": "+2[mu]\nThe first time you initiate a run on a server protected by 2 or more pieces of ice each turn, draw 2 cards.\nLimit 1 **console** per player.",
       "title": "Daredevil",
       "type_code": "hardware",
       "uniqueness": true
@@ -4285,7 +4285,7 @@
       "position": 81,
       "quantity": 3,
       "side_code": "runner",
-      "text": "Play only as your first [click].\nDraw 1 card for each installed <strong>clan</strong> resource. Gain 1[credit] for each tag you have.",
+      "text": "Play only as your first [click].\nDraw 1 card for each installed **clan** resource. Gain 1[credit] for each tag you have.",
       "title": "Mars for Martians",
       "type_code": "event",
       "uniqueness": false
@@ -4306,7 +4306,7 @@
       "quantity": 3,
       "side_code": "runner",
       "strength": 0,
-      "text": "When your turn begins, you may take 1 tag to place 2 virus counters on God of War.\n<strong>Hosted virus counter</strong>: Break ice subroutine.\n2[credit]: +1 strength.",
+      "text": "When your turn begins, you may take 1 tag to place 2 virus counters on God of War.\n**Hosted virus counter**: Break ice subroutine.\n2[credit]: +1 strength.",
       "title": "God of War",
       "type_code": "program",
       "uniqueness": false
@@ -4365,7 +4365,7 @@
       "quantity": 3,
       "side_code": "runner",
       "strength": 1,
-      "text": "During each run, Na'Not'K has +1 strength for each piece of ice protecting the attacked server.\n1[credit]: Break <strong>sentry</strong> subroutine.\n3[credit]: +2 strength.",
+      "text": "During each run, Na'Not'K has +1 strength for each piece of ice protecting the attacked server.\n1[credit]: Break **sentry** subroutine.\n3[credit]: +2 strength.",
       "title": "Na'Not'K",
       "type_code": "program",
       "uniqueness": false
@@ -4477,7 +4477,7 @@
       "position": 108,
       "quantity": 3,
       "side_code": "runner",
-      "text": "<strong>Trash a card from your grip:</strong> Prevent an installed card of the same type from being trashed by the Corp.",
+      "text": "**Trash a card from your grip:** Prevent an installed card of the same type from being trashed by the Corp.",
       "title": "Dummy Box",
       "type_code": "resource",
       "uniqueness": false
@@ -4555,7 +4555,7 @@
       "quantity": 3,
       "side_code": "runner",
       "strength": 1,
-      "text": "1[credit]: Break <strong>sentry</strong> subroutine.\n3[credit]: +5 strength.\n[trash]: Bypass a piece of <strong>sentry</strong> ice currently being encountered, even if it has strength greater than Lustig.",
+      "text": "1[credit]: Break **sentry** subroutine.\n3[credit]: +5 strength.\n[trash]: Bypass a piece of **sentry** ice currently being encountered, even if it has strength greater than Lustig.",
       "title": "Lustig",
       "type_code": "program",
       "uniqueness": false
@@ -4575,7 +4575,7 @@
       "quantity": 3,
       "side_code": "runner",
       "strength": 0,
-      "text": "<strong>Hosted power counter</strong>: Break ice subroutine.\n2[credit]: +2 strength.\nWhen your turn begins, you may pay X[credit] to place X power counters on Mammon.\nWhen your turn ends, remove all hosted power counters.",
+      "text": "**Hosted power counter**: Break ice subroutine.\n2[credit]: +2 strength.\nWhen your turn begins, you may pay X[credit] to place X power counters on Mammon.\nWhen your turn ends, remove all hosted power counters.",
       "title": "Mammon",
       "type_code": "program",
       "uniqueness": false
@@ -4594,7 +4594,7 @@
       "position": 11,
       "quantity": 3,
       "side_code": "runner",
-      "text": "+1[link]\n[trash]: Derez a piece of ice protecting a remote server. Use this ability only during the next paid ability window after a successful run on HQ ends.\n<errata>Errata from FAQ 4.2</errata>.",
+      "text": "+1[link]\n[trash]: Derez a piece of ice protecting a remote server. Use this ability only during the next paid ability window after a successful run on HQ ends.\n*Errata from FAQ 4.2*.",
       "title": "Maxwell James",
       "type_code": "resource",
       "uniqueness": true
@@ -4632,7 +4632,7 @@
       "position": 16,
       "quantity": 3,
       "side_code": "runner",
-      "text": "+1[mu]\nWhen your turn begins, draw 1 card.\nLimit 1 <strong>console</strong> per player.",
+      "text": "+1[mu]\nWhen your turn begins, draw 1 card.\nLimit 1 **console** per player.",
       "title": "Ubax",
       "type_code": "hardware",
       "uniqueness": true
@@ -4653,7 +4653,7 @@
       "quantity": 3,
       "side_code": "runner",
       "strength": 2,
-      "text": "Adept has +1 strength for each unused MU.\n2[credit]: Break <strong>sentry</strong> or <strong>barrier</strong> subroutine.",
+      "text": "Adept has +1 strength for each unused MU.\n2[credit]: Break **sentry** or **barrier** subroutine.",
       "title": "Adept",
       "type_code": "program",
       "uniqueness": false
@@ -4674,7 +4674,7 @@
       "quantity": 3,
       "side_code": "runner",
       "strength": 1,
-      "text": "Savant has +1 strength for each unused MU.\n2[credit]: Break 1 <strong>sentry</strong> or 2 <strong>code gate</strong> subroutines.",
+      "text": "Savant has +1 strength for each unused MU.\n2[credit]: Break 1 **sentry** or 2 **code gate** subroutines.",
       "title": "Savant",
       "type_code": "program",
       "uniqueness": false
@@ -4692,7 +4692,7 @@
       "position": 19,
       "quantity": 3,
       "side_code": "runner",
-      "text": "Install Egret only on a rezzed piece of ice.\nHost ice gains <strong>sentry</strong>, <strong>code gate</strong> and <strong>barrier</strong>.",
+      "text": "Install Egret only on a rezzed piece of ice.\nHost ice gains **sentry**, **code gate** and **barrier**.",
       "title": "Egret",
       "type_code": "program",
       "uniqueness": false
@@ -4711,7 +4711,7 @@
       "position": 20,
       "quantity": 3,
       "side_code": "runner",
-      "text": "Dhegdheer can host a single program.\nLower the install cost of programs you install on Dhegdheer by 1.\nThe memory cost of the hosted program does not count against your memory limit.\n<errata>Errata from FAQ 4.0</errata>",
+      "text": "Dhegdheer can host a single program.\nLower the install cost of programs you install on Dhegdheer by 1.\nThe memory cost of the hosted program does not count against your memory limit.\n*Errata from FAQ 4.0*",
       "title": "Dhegdheer",
       "type_code": "program",
       "uniqueness": false
@@ -4785,7 +4785,7 @@
       "position": 25,
       "quantity": 3,
       "side_code": "runner",
-      "text": "[trash]: Choose an <strong>icebreaker</strong>. Until the end of the run, that <strong>icebreaker</strong> has +1 strength for each card in your grip.",
+      "text": "[trash]: Choose an **icebreaker**. Until the end of the run, that **icebreaker** has +1 strength for each card in your grip.",
       "title": "Dean Lister",
       "type_code": "resource",
       "uniqueness": true
@@ -4822,7 +4822,7 @@
       "position": 27,
       "quantity": 3,
       "side_code": "runner",
-      "text": "[click]<strong>, forfeit an agenda:</strong> Play an event from your heap, ignoring all costs.",
+      "text": "[click]**, forfeit an agenda:** Play an event from your heap, ignoring all costs.",
       "title": "The Shadow Net",
       "type_code": "resource",
       "uniqueness": true
@@ -4841,7 +4841,7 @@
       "position": 2,
       "quantity": 2,
       "side_code": "runner",
-      "text": "Run HQ or R&D. During that run, you may pay 0[credit] to trash any card you are accessing (even if it has no trash cost).\n<errata>Errata from CR 1.2</errata>",
+      "text": "Run HQ or R&D. During that run, you may pay 0[credit] to trash any card you are accessing (even if it has no trash cost).\n*Errata from CR 1.2*",
       "title": "Demolition Run",
       "type_code": "event",
       "uniqueness": false
@@ -4877,7 +4877,7 @@
       "position": 4,
       "quantity": 1,
       "side_code": "runner",
-      "text": "Run a remote server. If successful, instead of accessing cards, trash all cards installed in that server.\n<errata>Errata from CR 1.2</errata>",
+      "text": "Run a remote server. If successful, instead of accessing cards, trash all cards installed in that server.\n*Errata from CR 1.2*",
       "title": "Singularity",
       "type_code": "event",
       "uniqueness": false
@@ -4914,7 +4914,7 @@
       "position": 6,
       "quantity": 2,
       "side_code": "runner",
-      "text": "1[recurring-credit]\nUse this credit to pay for using <strong>icebreakers</strong> or for installing <strong>virus</strong> programs.",
+      "text": "1[recurring-credit]\nUse this credit to pay for using **icebreakers** or for installing **virus** programs.",
       "title": "Cyberfeeder",
       "type_code": "hardware",
       "uniqueness": false
@@ -4934,7 +4934,7 @@
       "position": 12,
       "quantity": 1,
       "side_code": "runner",
-      "text": "Whenever you make a successful run, place 1 virus counter on Hemorrhage.\n[click], <strong>2 hosted virus counters:</strong> The Corp trashes 1 card from HQ.",
+      "text": "Whenever you make a successful run, place 1 virus counter on Hemorrhage.\n[click], **2 hosted virus counters:** The Corp trashes 1 card from HQ.",
       "title": "Hemorrhage",
       "type_code": "program",
       "uniqueness": false
@@ -4955,7 +4955,7 @@
       "quantity": 3,
       "side_code": "runner",
       "strength": 5,
-      "text": "1[credit]: Break any number of <strong>barrier</strong> subroutines.",
+      "text": "1[credit]: Break any number of **barrier** subroutines.",
       "title": "Morning Star",
       "type_code": "program",
       "uniqueness": false
@@ -5124,7 +5124,7 @@
       "position": 24,
       "quantity": 1,
       "side_code": "runner",
-      "text": "Search your stack for an <strong>icebreaker</strong>, reveal it, and add it to your grip. Shuffle your stack.",
+      "text": "Search your stack for an **icebreaker**, reveal it, and add it to your grip. Shuffle your stack.",
       "title": "Special Order",
       "type_code": "event",
       "uniqueness": false
@@ -5143,7 +5143,7 @@
       "position": 25,
       "quantity": 2,
       "side_code": "runner",
-      "text": "+1[mu]\nOnce per turn, you may immediately make another run when a successful run ends.\nLimit 1 <strong>console</strong> per player.",
+      "text": "+1[mu]\nOnce per turn, you may immediately make another run when a successful run ends.\nLimit 1 **console** per player.",
       "title": "Doppelg\u00e4nger",
       "type_code": "hardware",
       "uniqueness": true
@@ -5182,7 +5182,7 @@
       "quantity": 3,
       "side_code": "runner",
       "strength": 2,
-      "text": "2[credit]: Break <strong>code gate</strong> subroutine.\n2[credit]: +3 strength.",
+      "text": "2[credit]: Break **code gate** subroutine.\n2[credit]: +3 strength.",
       "title": "Peacock",
       "type_code": "program",
       "uniqueness": false
@@ -5386,7 +5386,7 @@
       "position": 44,
       "quantity": 2,
       "side_code": "runner",
-      "text": "Choose a piece of ice. That ice gains <strong>sentry</strong>, <strong>code gate</strong>, and <strong>barrier</strong> until the end of the turn.",
+      "text": "Choose a piece of ice. That ice gains **sentry**, **code gate**, and **barrier** until the end of the turn.",
       "title": "Tinkering",
       "type_code": "event",
       "uniqueness": false
@@ -5404,7 +5404,7 @@
       "position": 45,
       "quantity": 2,
       "side_code": "runner",
-      "text": "Dinosaurus can host a single non-<strong>AI icebreaker</strong>. The memory cost of the hosted <strong>icebreaker</strong> does not count against your memory limit.\nHosted <strong>icebreaker</strong> has +2 strength.\nLimit 1 <strong>console</strong> per player.",
+      "text": "Dinosaurus can host a single non-**AI icebreaker**. The memory cost of the hosted **icebreaker** does not count against your memory limit.\nHosted **icebreaker** has +2 strength.\nLimit 1 **console** per player.",
       "title": "Dinosaurus",
       "type_code": "hardware",
       "uniqueness": true
@@ -5442,7 +5442,7 @@
       "position": 47,
       "quantity": 1,
       "side_code": "runner",
-      "text": "Install The Personal Touch only on an <strong>icebreaker.</strong>\nHost <strong>icebreaker</strong> has +1 strength.",
+      "text": "Install The Personal Touch only on an **icebreaker.**\nHost **icebreaker** has +1 strength.",
       "title": "The Personal Touch",
       "type_code": "hardware",
       "uniqueness": false
@@ -5610,7 +5610,7 @@
       "position": 1,
       "quantity": 3,
       "side_code": "runner",
-      "text": "Play only as your first [click].\nFor the remainder of the turn, whenever you access a card not in Archives, trash it and suffer 1 meat damage.\n<errata>Errata from CR 1.2</errata>",
+      "text": "Play only as your first [click].\nFor the remainder of the turn, whenever you access a card not in Archives, trash it and suffer 1 meat damage.\n*Errata from CR 1.2*",
       "title": "By Any Means",
       "type_code": "event",
       "uniqueness": false
@@ -5630,7 +5630,7 @@
       "quantity": 3,
       "side_code": "runner",
       "strength": 3,
-      "text": "Whenever you make a successful run, you may place 1 virus counter on Yusuf.\n<strong>Virus counter from any installed card</strong>: Break <strong>barrier</strong> subroutine.\n<strong>Virus counter from any installed card</strong>: +1 strength.",
+      "text": "Whenever you make a successful run, you may place 1 virus counter on Yusuf.\n**Virus counter from any installed card**: Break **barrier** subroutine.\n**Virus counter from any installed card**: +1 strength.",
       "title": "Yusuf",
       "type_code": "program",
       "uniqueness": false
@@ -5686,7 +5686,7 @@
       "position": 26,
       "quantity": 3,
       "side_code": "runner",
-      "text": "Whenever you break all subroutines on a piece of ice during a single encounter, you may place 1 power counter on Takobi.\n<strong>2 hosted power counters</strong>: Choose a non-<strong>AI icebreaker</strong>. That <strong>icebreaker</strong> has +3 strength until the end of the current encounter.",
+      "text": "Whenever you break all subroutines on a piece of ice during a single encounter, you may place 1 power counter on Takobi.\n**2 hosted power counters**: Choose a non-**AI icebreaker**. That **icebreaker** has +3 strength until the end of the current encounter.",
       "title": "Takobi",
       "type_code": "program",
       "uniqueness": true
@@ -5723,7 +5723,7 @@
       "position": 28,
       "quantity": 3,
       "side_code": "runner",
-      "text": "As an additional cost to play this event, spend [click].\nTrash any number of programs and/or pieces of hardware from your grip. Search your stack for a program or piece of hardware and install it, lowering its install cost by the total install cost of the trashed cards. Shuffle your stack.\n<errata>Errata from FAQ 4.2</errata>",
+      "text": "As an additional cost to play this event, spend [click].\nTrash any number of programs and/or pieces of hardware from your grip. Search your stack for a program or piece of hardware and install it, lowering its install cost by the total install cost of the trashed cards. Shuffle your stack.\n*Errata from FAQ 4.2*",
       "title": "Emergent Creativity",
       "type_code": "event",
       "uniqueness": false
@@ -5761,7 +5761,7 @@
       "position": 42,
       "quantity": 3,
       "side_code": "runner",
-      "text": "Whenever you trash a Corp card, you may place 1 virus counter on Friday Chip.\nWhen your turn begins, you may move 1 hosted virus counter to a <strong>virus</strong> program.",
+      "text": "Whenever you trash a Corp card, you may place 1 virus counter on Friday Chip.\nWhen your turn begins, you may move 1 hosted virus counter to a **virus** program.",
       "title": "Friday Chip",
       "type_code": "hardware",
       "uniqueness": false
@@ -5780,7 +5780,7 @@
       "position": 44,
       "quantity": 3,
       "side_code": "runner",
-      "text": "This card is not trashed until another <strong>current</strong> is played or an agenda is scored.\nThe first time you install a card each turn, the Corp loses 1[credit].",
+      "text": "This card is not trashed until another **current** is played or an agenda is scored.\nThe first time you install a card each turn, the Corp loses 1[credit].",
       "title": "Corporate \"Grant\"",
       "type_code": "event",
       "uniqueness": false
@@ -5799,7 +5799,7 @@
       "position": 45,
       "quantity": 3,
       "side_code": "runner",
-      "text": "The first time you would take any number of tags or suffer any amount of net damage each turn, you may trash No One Home to force the Corp to \"<trace>trace 0</trace> If unsuccessful, the Runner avoids any number of tags or prevents any amount of net damage.\"",
+      "text": "The first time you would take any number of tags or suffer any amount of net damage each turn, you may trash No One Home to force the Corp to \"**trace 0** If unsuccessful, the Runner avoids any number of tags or prevents any amount of net damage.\"",
       "title": "No One Home",
       "type_code": "resource",
       "uniqueness": false
@@ -5835,7 +5835,7 @@
       "position": 48,
       "quantity": 3,
       "side_code": "runner",
-      "text": "Play only if you made a successful run on a central server this turn.\nForce the Corp to \"<trace>trace 3</trace> If unsuccessful, reveal all cards in HQ. The Runner may choose up to 2 of the revealed cards. Shuffle those cards into R&D.\"",
+      "text": "Play only if you made a successful run on a central server this turn.\nForce the Corp to \"**trace 3** If unsuccessful, reveal all cards in HQ. The Runner may choose up to 2 of the revealed cards. Shuffle those cards into R&D.\"",
       "title": "White Hat",
       "type_code": "event",
       "uniqueness": false
@@ -5853,7 +5853,7 @@
       "position": 62,
       "quantity": 3,
       "side_code": "runner",
-      "text": "+3[mu]\nUse the MU on Knobkierie only for <strong>virus</strong> programs.\nThe first time you make a successful run each turn, you may place 1 virus counter on an installed <strong>virus</strong> program.\nLimit 1 <strong>console</strong> per player.",
+      "text": "+3[mu]\nUse the MU on Knobkierie only for **virus** programs.\nThe first time you make a successful run each turn, you may place 1 virus counter on an installed **virus** program.\nLimit 1 **console** per player.",
       "title": "Knobkierie",
       "type_code": "hardware",
       "uniqueness": true
@@ -6004,7 +6004,7 @@
       "quantity": 3,
       "side_code": "runner",
       "strength": 2,
-      "text": "When you encounter a piece of ice, you may pay 2[credit] to have it gain <strong>barrier</strong> until the end of the encounter. Use this ability only once per turn.\n2[credit]: Break any number of <strong>barrier</strong> subroutines.\n3[credit]: +6 strength.",
+      "text": "When you encounter a piece of ice, you may pay 2[credit] to have it gain **barrier** until the end of the encounter. Use this ability only once per turn.\n2[credit]: Break any number of **barrier** subroutines.\n3[credit]: +6 strength.",
       "title": "Laamb",
       "type_code": "program",
       "uniqueness": false
@@ -6059,7 +6059,7 @@
       "position": 101,
       "quantity": 3,
       "side_code": "runner",
-      "text": "[click], <strong>suffer 1 net damage</strong>: Gain 1[credit] and draw 2 cards. Use this ability only once per turn.",
+      "text": "[click], **suffer 1 net damage**: Gain 1[credit] and draw 2 cards. Use this ability only once per turn.",
       "title": "Zer0",
       "type_code": "hardware",
       "uniqueness": true
@@ -6079,7 +6079,7 @@
       "quantity": 3,
       "side_code": "runner",
       "strength": 1,
-      "text": "Whenever you make a successful run, you may place 1 virus counter on Musaazi.\n<strong>Virus counter from any installed card</strong>: Break <strong>sentry</strong> subroutine.\n<strong>Virus counter from any installed card</strong>: +1 strength.",
+      "text": "Whenever you make a successful run, you may place 1 virus counter on Musaazi.\n**Virus counter from any installed card**: Break **sentry** subroutine.\n**Virus counter from any installed card**: +1 strength.",
       "title": "Musaazi",
       "type_code": "program",
       "uniqueness": false
@@ -6118,7 +6118,7 @@
       "quantity": 3,
       "side_code": "runner",
       "strength": 3,
-      "text": "2[credit]: Break up to 3 <strong>code gate</strong> subroutines.\n2[credit]: +3 strength.\nThe first time each turn an encounter ends in which you used Amina to break all subroutines on a piece of ice, the Corp loses 1[credit].",
+      "text": "2[credit]: Break up to 3 **code gate** subroutines.\n2[credit]: +3 strength.\nThe first time each turn an encounter ends in which you used Amina to break all subroutines on a piece of ice, the Corp loses 1[credit].",
       "title": "Amina",
       "type_code": "program",
       "uniqueness": false
@@ -6172,7 +6172,7 @@
       "position": 107,
       "quantity": 3,
       "side_code": "runner",
-      "text": "[click], [trash], <strong>trash a card from your grip</strong>: Install a program, piece of hardware, or <strong>virtual</strong> resource from your heap, paying its install cost.",
+      "text": "[click], [trash], **trash a card from your grip**: Install a program, piece of hardware, or **virtual** resource from your heap, paying its install cost.",
       "title": "Reclaim",
       "type_code": "resource",
       "uniqueness": false
@@ -6192,7 +6192,7 @@
       "quantity": 3,
       "side_code": "runner",
       "strength": 2,
-      "text": "When you encounter a piece of ice, you may pay 2[credit] to have it gain <strong>code gate</strong> until the end of the encounter. Use this ability only once per turn.\n1[credit]: Break <strong>code gate</strong> subroutine.\n2[credit]: +4 strength.",
+      "text": "When you encounter a piece of ice, you may pay 2[credit] to have it gain **code gate** until the end of the encounter. Use this ability only once per turn.\n1[credit]: Break **code gate** subroutine.\n2[credit]: +4 strength.",
       "title": "Engolo",
       "type_code": "program",
       "uniqueness": false
@@ -6265,7 +6265,7 @@
       "position": 4,
       "quantity": 3,
       "side_code": "runner",
-      "text": "+1[mu]\nOnce per turn, when you would play or install a card, you may trash 1 card from your grip to lower the play or install cost by 2.\nLimit 1 <strong>console</strong> per player.",
+      "text": "+1[mu]\nOnce per turn, when you would play or install a card, you may trash 1 card from your grip to lower the play or install cost by 2.\nLimit 1 **console** per player.",
       "title": "Patchwork",
       "type_code": "hardware",
       "uniqueness": false
@@ -6284,7 +6284,7 @@
       "position": 7,
       "quantity": 3,
       "side_code": "runner",
-      "text": "The first time each turn a program or a piece of hardware is trashed (from any location), you may place 1 power counter on District 99.\n[click], <strong>3 hosted power counters</strong>: Add a card that matches the faction of your identity from your heap to your grip.",
+      "text": "The first time each turn a program or a piece of hardware is trashed (from any location), you may place 1 power counter on District 99.\n[click], **3 hosted power counters**: Add a card that matches the faction of your identity from your heap to your grip.",
       "title": "District 99",
       "type_code": "resource",
       "uniqueness": true
@@ -6321,7 +6321,7 @@
       "position": 10,
       "quantity": 3,
       "side_code": "runner",
-      "text": "+1[mu]\nThe first time you make a successful run each turn, you may gain 1[credit] and look at the top card of your stack. If you do, you may add that card to the bottom of your stack.\nLimit 1 <strong>console</strong> per player.",
+      "text": "+1[mu]\nThe first time you make a successful run each turn, you may gain 1[credit] and look at the top card of your stack. If you do, you may add that card to the bottom of your stack.\nLimit 1 **console** per player.",
       "title": "Paragon",
       "type_code": "hardware",
       "uniqueness": true
@@ -6361,7 +6361,7 @@
       "quantity": 3,
       "side_code": "runner",
       "strength": 1,
-      "text": "Whenever an encounter with a piece of ice in which you used Tycoon to break a subroutine ends, the Corp gains 2[credit].\n1[credit]: break up to 2 <strong>barrier</strong> subroutines.\n2[credit]: +3 strength.",
+      "text": "Whenever an encounter with a piece of ice in which you used Tycoon to break a subroutine ends, the Corp gains 2[credit].\n1[credit]: break up to 2 **barrier** subroutines.\n2[credit]: +3 strength.",
       "title": "Tycoon",
       "type_code": "program",
       "uniqueness": false
@@ -6420,7 +6420,7 @@
       "quantity": 3,
       "side_code": "runner",
       "strength": 2,
-      "text": "2[credit]: Host Ika on a piece of ice.\n1[credit]: Break up to 2 subroutines on host <strong>sentry</strong>.\n2[credit]: +3 strength.",
+      "text": "2[credit]: Host Ika on a piece of ice.\n1[credit]: Break up to 2 subroutines on host **sentry**.\n2[credit]: +3 strength.",
       "title": "Ika",
       "type_code": "program",
       "uniqueness": false
@@ -6512,7 +6512,7 @@
       "position": 25,
       "quantity": 1,
       "side_code": "runner",
-      "text": "Host a <strong>g-mod</strong> identity that does not match the faction of your identity on DJ Fenris when he is installed. Remove hosted identity from the game if DJ Fenris is uninstalled.\nDJ Fenris gains the text of the hosted identity.\nLimit 1 per deck.",
+      "text": "Host a **g-mod** identity that does not match the faction of your identity on DJ Fenris when he is installed. Remove hosted identity from the game if DJ Fenris is uninstalled.\nDJ Fenris gains the text of the hosted identity.\nLimit 1 per deck.",
       "title": "DJ Fenris",
       "type_code": "resource",
       "uniqueness": true
@@ -6567,7 +6567,7 @@
       "quantity": 3,
       "side_code": "runner",
       "strength": 2,
-      "text": "1[credit]: Break <strong>barrier</strong> subroutine.\n1[credit]: +1 strength.",
+      "text": "1[credit]: Break **barrier** subroutine.\n1[credit]: +1 strength.",
       "title": "Corroder",
       "type_code": "program",
       "uniqueness": false
@@ -6585,7 +6585,7 @@
       "position": 11,
       "quantity": 2,
       "side_code": "runner",
-      "text": "Whenever you make a successful run on a central server, place 1 virus counter on Datasucker.\n<strong>Hosted virus counter:</strong> Rezzed piece of ice currently being encountered has -1 strength until the end of the encounter.",
+      "text": "Whenever you make a successful run on a central server, place 1 virus counter on Datasucker.\n**Hosted virus counter:** Rezzed piece of ice currently being encountered has -1 strength until the end of the encounter.",
       "title": "Datasucker",
       "type_code": "program",
       "uniqueness": false
@@ -6604,7 +6604,7 @@
       "position": 13,
       "quantity": 2,
       "side_code": "runner",
-      "text": "Place 2 virus counters on Imp when it is installed.\nOnce per turn, you may remove 1 hosted virus counter to trash a card you are accessing <i>(even if it has no trash cost)</i>.\n<errata>Errata from CR 1.2</errata>",
+      "text": "Place 2 virus counters on Imp when it is installed.\nOnce per turn, you may remove 1 hosted virus counter to trash a card you are accessing <i>(even if it has no trash cost)</i>.\n*Errata from CR 1.2*",
       "title": "Imp",
       "type_code": "program",
       "uniqueness": false
@@ -6642,7 +6642,7 @@
       "quantity": 3,
       "side_code": "runner",
       "strength": 3,
-      "text": "1[credit]: Break <strong>sentry</strong> subroutine.",
+      "text": "1[credit]: Break **sentry** subroutine.",
       "title": "Mimic",
       "type_code": "program",
       "uniqueness": false
@@ -6662,7 +6662,7 @@
       "quantity": 3,
       "side_code": "runner",
       "strength": 2,
-      "text": "1[credit]: Break <strong>code gate</strong> subroutine.\n2[credit]: +2 strength.\n[trash]: Bypass a piece of <strong>code gate</strong> ice currently being encountered, even if it has strength greater than Abagnale.",
+      "text": "1[credit]: Break **code gate** subroutine.\n2[credit]: +2 strength.\n[trash]: Bypass a piece of **code gate** ice currently being encountered, even if it has strength greater than Abagnale.",
       "title": "Abagnale",
       "type_code": "program",
       "uniqueness": false
@@ -6682,7 +6682,7 @@
       "quantity": 2,
       "side_code": "runner",
       "strength": 1,
-      "text": "2[credit]: Break up to 2 <strong>barrier</strong> subroutines.\n2[credit]: +3 strength.\n[trash]: Bypass a piece of <strong>barrier</strong> ice currently being encountered, even if it has strength greater than Demara.",
+      "text": "2[credit]: Break up to 2 **barrier** subroutines.\n2[credit]: +3 strength.\n[trash]: Bypass a piece of **barrier** ice currently being encountered, even if it has strength greater than Demara.",
       "title": "Demara",
       "type_code": "program",
       "uniqueness": false
@@ -6702,7 +6702,7 @@
       "quantity": 2,
       "side_code": "runner",
       "strength": 2,
-      "text": "0[credit]: Break <strong>sentry</strong> subroutine.\n1[credit]: +1 strength.\nWhen an encounter with a piece of ice in which you used Faerie to break a subroutine ends, trash Faerie.",
+      "text": "0[credit]: Break **sentry** subroutine.\n1[credit]: +1 strength.\nWhen an encounter with a piece of ice in which you used Faerie to break a subroutine ends, trash Faerie.",
       "title": "Faerie",
       "type_code": "program",
       "uniqueness": false
@@ -6721,7 +6721,7 @@
       "quantity": 2,
       "side_code": "runner",
       "strength": 2,
-      "text": "1[credit]: Break <strong>sentry</strong> subroutine.\n2[credit]: +1 strength.\nWhen you install Femme Fatale, choose an installed piece of ice. When you encounter that ice, you may pay 1[credit] per subroutine on that ice to bypass it.",
+      "text": "1[credit]: Break **sentry** subroutine.\n2[credit]: +1 strength.\nWhen you install Femme Fatale, choose an installed piece of ice. When you encounter that ice, you may pay 1[credit] per subroutine on that ice to bypass it.",
       "title": "Femme Fatale",
       "type_code": "program",
       "uniqueness": false
@@ -6779,7 +6779,7 @@
       "quantity": 3,
       "side_code": "runner",
       "strength": 3,
-      "text": "2[credit]: Break up to 2 <strong>barrier</strong> subroutines.\n1[credit]: +1 strength for the remainder of this run.",
+      "text": "2[credit]: Break up to 2 **barrier** subroutines.\n1[credit]: +1 strength for the remainder of this run.",
       "title": "Battering Ram",
       "type_code": "program",
       "uniqueness": false
@@ -6799,7 +6799,7 @@
       "quantity": 1,
       "side_code": "runner",
       "strength": 10,
-      "text": "[trash]: Break any number of <strong>AP</strong> subroutines.\n[trash]: Prevent any amount of net damage.",
+      "text": "[trash]: Break any number of **AP** subroutines.\n[trash]: Prevent any amount of net damage.",
       "title": "Deus X",
       "type_code": "program",
       "uniqueness": false
@@ -6819,7 +6819,7 @@
       "quantity": 3,
       "side_code": "runner",
       "strength": 2,
-      "text": "1[credit]: Break <strong>code gate</strong> subroutine.\n1[credit]: +1 strength for the remainder of this run.",
+      "text": "1[credit]: Break **code gate** subroutine.\n1[credit]: +1 strength for the remainder of this run.",
       "title": "Gordian Blade",
       "type_code": "program",
       "uniqueness": false
@@ -6873,7 +6873,7 @@
       "position": 2,
       "quantity": 3,
       "side_code": "runner",
-      "text": "+1[mu]\nThe trash cost of each Corp card is lowered by 1.\nThe first time each turn you trash a Corp card, gain 1[credit].\nLimit 1 <strong>console</strong> per player.",
+      "text": "+1[mu]\nThe trash cost of each Corp card is lowered by 1.\nThe first time each turn you trash a Corp card, gain 1[credit].\nLimit 1 **console** per player.",
       "title": "Demolisher",
       "type_code": "hardware",
       "uniqueness": true
@@ -6962,7 +6962,7 @@
       "position": 8,
       "quantity": 3,
       "side_code": "runner",
-      "text": "The first time each turn you install a <strong>virus</strong> program, place 2 virus counters on this resource.\nWhen your turn begins, you may remove any 2 virus counters from your installed cards. If you do, draw 2 cards unless the Corp trashes the top card of R&D.",
+      "text": "The first time each turn you install a **virus** program, place 2 virus counters on this resource.\nWhen your turn begins, you may remove any 2 virus counters from your installed cards. If you do, draw 2 cards unless the Corp trashes the top card of R&D.",
       "title": "The Nihilist",
       "type_code": "resource",
       "uniqueness": true
@@ -7017,7 +7017,7 @@
       "quantity": 3,
       "side_code": "runner",
       "strength": 1,
-      "text": "1[credit]: Break <strong>sentry</strong> subroutine.\n1[credit]: +1 strength.\nThe first time each turn that you break all subroutines on a piece of ice you are encountering using only this program, gain 2[credit].",
+      "text": "1[credit]: Break **sentry** subroutine.\n1[credit]: +1 strength.\nThe first time each turn that you break all subroutines on a piece of ice you are encountering using only this program, gain 2[credit].",
       "title": "Bukhgalter",
       "type_code": "program",
       "uniqueness": false
@@ -7090,7 +7090,7 @@
       "quantity": 3,
       "side_code": "runner",
       "strength": 1,
-      "text": "When you install this program, it gets +3 strength for the remainder of the turn.\n1[credit]: Break <strong>barrier</strong> subroutine.\n2[credit]: +2 strength.",
+      "text": "When you install this program, it gets +3 strength for the remainder of the turn.\n1[credit]: Break **barrier** subroutine.\n2[credit]: +2 strength.",
       "title": "Gauss",
       "type_code": "program",
       "uniqueness": false
@@ -7109,7 +7109,7 @@
       "position": 25,
       "quantity": 3,
       "side_code": "runner",
-      "text": "When you install this program, place 2 virus counters on it.\n<strong>Hosted virus counter</strong>: Choose an ice subtype. The ice you are encountering gains that subtype for the remainder of the encounter. Use this ability only once per turn.",
+      "text": "When you install this program, place 2 virus counters on it.\n**Hosted virus counter**: Choose an ice subtype. The ice you are encountering gains that subtype for the remainder of the encounter. Use this ability only once per turn.",
       "title": "Pelangi",
       "type_code": "program",
       "uniqueness": false
