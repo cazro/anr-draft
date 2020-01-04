@@ -34,22 +34,12 @@ PLAYERS = {}
 
 # Getters
 
-def get_player_id(player_name):
-    if player_name in PLAYERS:
-        return PLAYERS[player_name]['player_id']
+def get_draft_id(player_id):
+    return PLAYERS[player_id]['draft_id']
 
 
-def get_player_dm_id(player_name):
-    return PLAYERS[player_name]['dm_id']
-
-
-def get_player_draft_info(player_name):
-    draft_id = PLAYERS[player_name]['draft_id']
-    return DRAFTS[draft_id]['players'][player_name]
-
-
-def get_seat_number(player_name):
-    return PLAYERS[player_name]['seat_number']
+def get_seat_number(player_id):
+    return PLAYERS[player_id]['seat_number']
 
 
 def get_num_players(draft_id):
@@ -64,12 +54,12 @@ def get_creator(draft_id):
     return DRAFTS[draft_id]['metadata']['creator']
 
 
-def get_pack(draft_id, player_name, pack_num):
-    return DRAFTS[draft_id]['players'][player_name]['packs'][pack_num]
+def get_pack(draft_id, player_id, pack_num):
+    return DRAFTS[draft_id]['players'][player_id]['packs'][pack_num]
 
 
-def get_picks(draft_id, player_name):
-    return DRAFTS[draft_id]['players'][player_name]['picks']
+def get_picks(draft_id, player_id):
+    return DRAFTS[draft_id]['players'][player_id]['picks']
 
 
 def get_card(card_code):
@@ -93,13 +83,20 @@ async def get_owner():
 
 #Checks
 
-def player_has_pack_waiting(draft_id, player_name):
-    inbox = DRAFTS[draft_id]['players'][player_name]['inbox']
+def is_player(player_id):
+    if player_id in PLAYERS:
+        return True
+    else:
+        return False
+
+
+def player_has_pack_waiting(draft_id, player_id):
+    inbox = DRAFTS[draft_id]['players'][player_id]['inbox']
     return len(inbox) > 0
 
 
-def player_has_open_pack(draft_id, player_name):
-    return DRAFTS[draft_id]['players'][player_name]['has_open_pack']
+def player_has_open_pack(draft_id, player_id):
+    return DRAFTS[draft_id]['players'][player_id]['has_open_pack']
 
 
 def draft_finished(draft_id):
@@ -135,7 +132,7 @@ async def send_dm(player_id, content,embed=None):
     await dm_channel.send(content=content,embed=embed)
 
 
-async def send_card(player,card):
+async def send_card(player_id,card):
     card_text = templates.format(card)
     embedded_card = discord.Embed(title=card['title'])
     embedded_card.description = card_text
@@ -147,7 +144,7 @@ async def send_card(player,card):
         embedded_card.set_image(url=NRDB_IMAGE.format(code=card['code']))
 
     await send_dm(
-        player_id=get_player_id(player),
+        player_id=player_id,
         content="Card",
         embed=embedded_card
     )
@@ -161,7 +158,7 @@ def setup_draft(initiating_user_name, initiating_user_id):
         draft_id = gen_draft_id()
     DRAFTS[draft_id] = {
         'metadata': {
-            'creator': initiating_user_name,
+            'creator': (initiating_user_id, initiating_user_name),
             'has_started': False,
             'stage': 0
         },
@@ -181,8 +178,8 @@ def gen_draft_id():
     return code
 
 
-def deal_card(draft_id, player_name, pack_num, card):
-    DRAFTS[draft_id]["players"][player_name]['packs'][pack_num].append(
+def deal_card(draft_id, player_id, pack_num, card):
+    DRAFTS[draft_id]["players"][player_id]['packs'][pack_num].append(
         card)
 
 
@@ -214,38 +211,38 @@ def setup_packs(draft_id):
     pack_num = 0
     cards_per_pack = len(corp_cards) // (get_num_players(draft_id) * 3)
     while len(corp_ids) >= get_num_players(draft_id):
-        for player in get_players(draft_id):
+        for player_id in get_players(draft_id):
             card_index = random.randint(0, len(corp_ids) - 1)
             card = corp_ids.pop(card_index)
-            deal_card(draft_id, player, pack_num, card)
+            deal_card(draft_id, player_id, pack_num, card)
     pack_num += 1
 
     while corp_cards and pack_num <= 3:
-        for player in get_players(draft_id):
+        for player_id in get_players(draft_id):
             card_index = random.randint(0, len(corp_cards) - 1)
             card = corp_cards.pop(card_index)
-            deal_card(draft_id, player, pack_num, card)
-        if len(get_pack(draft_id, player, pack_num)) == cards_per_pack:
+            deal_card(draft_id, player_id, pack_num, card)
+        if len(get_pack(draft_id, player_id, pack_num)) == cards_per_pack:
             pack_num += 1
 
     while len(runner_ids) >= get_num_players(draft_id):
-        for player in get_players(draft_id):
+        for player_id in get_players(draft_id):
             card_index = random.randint(0, len(runner_ids) - 1)
             card = runner_ids.pop(card_index)
-            deal_card(draft_id, player, pack_num, card)
+            deal_card(draft_id, player_id, pack_num, card)
     pack_num += 1
 
     while len(runner_cards) >= get_num_players(draft_id):
-        for player in get_players(draft_id):
+        for player_id in get_players(draft_id):
             card_index = random.randint(0, len(runner_cards) - 1)
             card = runner_cards.pop(card_index)
-            deal_card(draft_id, player, pack_num, card)
-        if len(get_pack(draft_id, player, pack_num)) == cards_per_pack:
+            deal_card(draft_id, player_id, pack_num, card)
+        if len(get_pack(draft_id, player_id, pack_num)) == cards_per_pack:
             pack_num += 1
 
 
 def add_player(player_name, player_id, draft_id):
-    DRAFTS[draft_id]['players'][player_name] = {
+    DRAFTS[draft_id]['players'][player_id] = {
         'inbox': [],
         'packs': [[], [], [], [], [], [], [], []],
         'picks': {
@@ -254,23 +251,22 @@ def add_player(player_name, player_id, draft_id):
         },
         'has_open_pack': False
     }
-    PLAYERS[player_name] = {
-        'player_id': player_id,
+    PLAYERS[player_id] = {
+        'player_name': player_name,
         'draft_id': draft_id,
-        'dm_id': player_id
     }
 
     return 'ADD_SUCCESSFUL'
 
 
-def remove_player(player_name, draft_id):
+def remove_player(player_id, draft_id):
     if draft_id not in DRAFTS:
         return 'Draft `{draft_id}` does not exist.'.format(draft_id=draft_id)
     if DRAFTS[draft_id]['metadata']['has_started']:
         return 'Draft `{draft_id}` has already started.'.format(draft_id=draft_id)
-    if player_name not in get_players(draft_id):
+    if player_id not in get_players(draft_id):
         return 'You were not registered for `{draft_id}`.'.format(draft_id=draft_id)
-    del DRAFTS[draft_id]['players'][player_name]
+    del DRAFTS[draft_id]['players'][player_id]
     return 'ok'
 
 
@@ -278,8 +274,8 @@ def assign_seat_numbers(draft_id):
     num_players = get_num_players(draft_id)
     seats = list(range(num_players))
     random.shuffle(seats)
-    for player in get_players(draft_id):
-        PLAYERS[player]['seat_number'] = seats.pop(0)
+    for player_id in get_players(draft_id):
+        PLAYERS[player_id]['seat_number'] = seats.pop(0)
 
 
 # Draft Operations
@@ -289,55 +285,55 @@ async def open_new_pack(draft_id):
     Sends first set of picks to players.
     After this the pack-sending logic is entirely event-driven.
     """
-    for player in get_players(draft_id):
-        pack = DRAFTS[draft_id]['players'][player]['packs'].pop(0)
-        DRAFTS[draft_id]['players'][player]['inbox'].append(pack)
+    for player_id in get_players(draft_id):
+        pack = DRAFTS[draft_id]['players'][player_id]['packs'].pop(0)
+        DRAFTS[draft_id]['players'][player_id]['inbox'].append(pack)
 
         for i, card in enumerate(pack):
-            await send_card(player,card)
+            await send_card(player_id,card)
 
-        DRAFTS[draft_id]['players'][player]['has_open_pack'] = True
+        DRAFTS[draft_id]['players'][player_id]['has_open_pack'] = True
 
 
-def handle_pick(draft_id, player_name, card_code):
-    pack = DRAFTS[draft_id]['players'][player_name]['inbox'].pop(0)
+def handle_pick(draft_id, player_id, card_code):
+    pack = DRAFTS[draft_id]['players'][player_id]['inbox'].pop(0)
     for i, card in enumerate(pack):
         if card['code'] == card_code:
             card_index = i
             break
     picked_card = pack.pop(card_index)
-    add_card_to_picks(draft_id, player_name, picked_card)
-    DRAFTS[draft_id]['players'][player_name]['has_open_pack'] = False
+    add_card_to_picks(draft_id, player_id, picked_card)
+    DRAFTS[draft_id]['players'][player_id]['has_open_pack'] = False
     if len(pack) > 0:
-        pass_pack(draft_id, player_name, pack)
+        pass_pack(draft_id, player_id, pack)
 
 
-def add_card_to_picks(draft_id, player_name, picked_card):
+def add_card_to_picks(draft_id, player_id, picked_card):
     draft = DRAFTS[draft_id]
-    player = draft['players'][player_name]
+    player = draft['players'][player_id]
     player_picks = player['picks'][picked_card['side_code']]
     player_picks.append(picked_card['title'])
 
 
-def pass_pack(draft_id, player_name, pack):
-    player_seat = get_seat_number(player_name)
+def pass_pack(draft_id, player_id, pack):
+    player_seat = get_seat_number(player_id)
     next_seat = (player_seat + 1) % get_num_players(draft_id)
-    for player in get_players(draft_id):
-        if get_seat_number(player) == next_seat:
-            DRAFTS[draft_id]['players'][player]['inbox'].append(pack)
+    for player_id in get_players(draft_id):
+        if get_seat_number(player_id) == next_seat:
+            DRAFTS[draft_id]['players'][player_id]['inbox'].append(pack)
 
 
-async def open_next_pack(draft_id, player):
-    pack = DRAFTS[draft_id]['players'][player]['inbox'][0]
+async def open_next_pack(draft_id, player_id):
+    pack = DRAFTS[draft_id]['players'][player_id]['inbox'][0]
     
     await send_dm(
-        player_id=get_player_dm_id(player),
+        player_id=player_id,
         content='Here is your next pack.'
     )
     for card in pack:
-        await send_card(player,card)
+        await send_card(player_id,card)
     
-    DRAFTS[draft_id]['players'][player]['has_open_pack'] = True
+    DRAFTS[draft_id]['players'][player_id]['has_open_pack'] = True
 
 
 async def open_next_pack_or_wait(draft_id, player_id, card):
@@ -349,28 +345,28 @@ async def open_next_pack_or_wait(draft_id, player_id, card):
     )
     need_new_pack = True
     
-    for player in get_players(draft_id):
-        if player_has_pack_waiting(draft_id, player):
+    for player_id in get_players(draft_id):
+        if player_has_pack_waiting(draft_id, player_id):
             need_new_pack = False
-            if not player_has_open_pack(draft_id, player):
-                await open_next_pack(draft_id, player)
+            if not player_has_open_pack(draft_id, player_id):
+                await open_next_pack(draft_id, player_id)
 
     if need_new_pack:
         if draft_finished(draft_id):
-            for player in get_players(draft_id):
+            for player_id in get_players(draft_id):
                 
                 await send_dm(
-                    player_id=get_player_dm_id(player),
+                    player_id=player_id,
                     content='The draft is complete! Here are your picks:'
                 )
-                picks = get_picks(draft_id, player)
+                picks = get_picks(draft_id, player_id)
                 
                 await send_dm(
-                    player_id=get_player_dm_id(player),
+                    player_id=player_id,
                     content=format_picks('Corp:\n\n', picks['corp'])
                 )
                 await send_dm(
-                    player_id=get_player_dm_id(player),
+                    player_id=player_id,
                     content=format_picks('Runner:\n\n', picks['runner'])
                 )
             cleanup(draft_id)
@@ -381,9 +377,9 @@ async def open_next_pack_or_wait(draft_id, player_id, card):
 def cleanup(draft_id):
     del DRAFTS[draft_id]
     # make a copy for iteration so you can delete from the real one
-    for player in list(PLAYERS.keys()):
-        if PLAYERS[player]['draft_id'] == draft_id:
-            del PLAYERS[player]
+    for player_id in list(PLAYERS.keys()):
+        if PLAYERS[player_id]['draft_id'] == draft_id:
+            del PLAYERS[player_id]
 
 
 def format_picks(heading, picks):
@@ -402,10 +398,17 @@ def format_picks(heading, picks):
 
 @bot.command(brief='Pick a card from the pack.')
 async def pick(ctx, card_code):
-    draft_id = PLAYERS[ctx.author.name]['draft_id']
-    handle_pick(draft_id, ctx.author.name, card_code)
-    card = get_card(card_code)
-    await open_next_pack_or_wait(draft_id, ctx.author.id,card)
+    player_name = ctx.author.name
+    player_id = ctx.author.id
+
+    if is_player(player_id):
+       
+        draft_id = get_draft_id(player_id)
+        handle_pick(draft_id, player_id, card_code)
+        card = get_card(card_code)
+        await open_next_pack_or_wait(draft_id, player_id, card)
+    else:
+        await ctx.send('You are not in a draft.')
 
 
 @bot.command(brief='Reserved for owner', description='Dumps a log of the the players joined and cards in the packs. Log located in anrdraft folder.', aliases=['dump'])
@@ -441,44 +444,71 @@ async def create_draft(ctx):
 
 
 @bot.command(name='cancel', brief='Cancel draft. (Only for creator)', description='Cancels draft. Can\'t be done once draft is started', aliases=['canceldraft'])
-async def cancel_draft(ctx, draft_id):
-    user_name = ctx.author.name
+async def cancel_draft(ctx):
+    player_name = ctx.author.name
+    player_id = ctx.author.id
 
-    if user_name != get_creator(draft_id):
-        msg = 'Only the draft creator can cancel it.'
-    elif draft_id not in DRAFTS:
-        msg = 'Draft does not exist.'
-    elif draft_started(draft_id):
-        msg = 'Draft `{draft_id}` has already started.'.format(draft_id=draft_id)
+    if is_player(player_id):
+        draft_id = get_draft_id(player_id)
+        creator_id, creator_name = get_creator(draft_id)
+
+        if player_id != creator_id:
+            msg = 'Only the draft creator can cancel it.'
+        elif draft_started(draft_id):
+            timeout = 30
+
+            def check(m):
+                return m.content == 'yes' or m.content == 'y'
+                   
+            await ctx.send(('Draft `{draft_id}` has already started.\n'
+                'Are you sure? Type (yes or y) to cancel or do nothing for "no". You have {timeout} seconds to respond.').format(draft_id=draft_id, timeout=timeout))
+
+            try:
+                response = await bot.wait_for('message',timeout=timeout, check=check)
+            except asyncio.TimeoutError:
+                pass
+            
+            await _cancel_draft(draft_id)
+            msg = 'Draft successfully cancelled.'
+
+        else:
+            await _cancel_draft(draft_id)
+            msg = 'Draft successfully cancelled.'
     else:
-        await _cancel_draft(draft_id)
-        msg = 'Draft successfully cancelled.'
+        msg = 'You are not enrolled in a draft.'
 
     await ctx.send(msg)
 
 
 @bot.command(name='start', brief='Start the draft. (Only for creator)', aliases=['startdraft'])
-async def start_draft(ctx, draft_id):
+async def start_draft(ctx):
     msg = ''
     user_name = ctx.author.name
-    if draft_id not in DRAFTS:
-        msg = 'Draft does not exist.'
-    elif user_name != get_creator(draft_id):
-        msg  = 'Only the draft creator can start the draft.'
-    elif draft_started(draft_id):
-        msg = 'Draft `{draft_id}` has already started.'.format(draft_id=draft_id)
+    user_id = ctx.author.id
+
+    if is_player(user_id):
+        draft_id = get_draft_id(user_id)
+        creator_id, creator_name = get_creator(draft_id)
+
+        if creator_id != creator_id:
+            msg  = 'Only the draft creator can start the draft.'
+        elif draft_started(draft_id):
+            msg = 'Draft `{draft_id}` has already started.'.format(draft_id=draft_id)
+        else:
+            await ctx.send('Draft `{draft_id}` is starting!'.format(draft_id=draft_id))
+            setup_packs(draft_id)
+            assign_seat_numbers(draft_id)
+            DRAFTS[draft_id]['metadata']['has_started'] = True
+            for player_id in get_players(draft_id):
+                
+                await send_dm(
+                    player_id=player_id,
+                    content='Welcome to the draft! Here is your first pack. Good luck!'
+                )
+            await open_new_pack(draft_id)
     else:
-        await ctx.send('Draft `{draft_id}` is starting!'.format(draft_id=draft_id))
-        setup_packs(draft_id)
-        assign_seat_numbers(draft_id)
-        DRAFTS[draft_id]['metadata']['has_started'] = True
-        for player in get_players(draft_id):
-            
-            await send_dm(
-                player_id=get_player_id(player),
-                content='Welcome to the draft! Here is your first pack. Good luck!'
-            )
-        await open_new_pack(draft_id)
+        msg = 'You are not enrolled in a draft.'
+
     if msg:
         await ctx.send(content = msg)
 
@@ -487,16 +517,18 @@ async def start_draft(ctx, draft_id):
 async def join_draft(ctx, draft_id):
     player_name = ctx.author.name
     player_id = ctx.author.id
-    if draft_id not in DRAFTS:
-        msg = 'Draft does not exist.'
-    elif player_name in get_players(draft_id):
+
+    if player_id in get_players(draft_id):
         msg = 'You can not join the same draft more than once.'
+    elif player_id in PLAYERS:
+        msg = 'You can not join more than one draft.'
+    elif draft_id not in DRAFTS:
+        msg = 'Draft does not exist.'
     elif draft_started(draft_id):
         msg = 'Draft `{draft_id}` has already started.'.format(draft_id=draft_id)
     else:
         add_player(player_name, player_id, draft_id)
-        creator_name = get_creator(draft_id)
-        creator_id = get_player_id(creator_name)
+        creator_id,creator_name = get_creator(draft_id)
         num_players = get_num_players(draft_id)
         await send_dm(
             player_id=creator_id,
@@ -512,31 +544,37 @@ async def join_draft(ctx, draft_id):
 
 
 @bot.command(name='leave', brief='Leave a draft.', description='Leaves draft. Can\'t be done once draft is started', aliases=['leavedraft'])
-async def leave_draft(ctx, draft_id):
+async def leave_draft(ctx):
     player_name = ctx.author.name
-    # remove_player() does the checks I usually do here
-    res = remove_player(player_name, draft_id)
-    if res != 'ok':
-        msg = 'Failed to leave draft. Error: ' + res
-    elif player_name == get_creator(draft_id):
-        await _cancel_draft(draft_id)
-        msg = ('Successfully withdrew from draft `{draft_id}`.\n'
-            'Because you were the creator of this draft it has been cancelled. \n'
-            'The other players have been notified.').format(draft_id=draft_id)
+    player_id = ctx.author.id
+
+    if is_player(player_id):
+        draft_id = get_draft_id(player_id)
+        creator_id, creator_name =get_creator(draft_id)
+        # remove_player() does the checks I usually do here
+        res = remove_player(player_id, draft_id)
+        if res != 'ok':
+            msg = 'Failed to leave draft. Error: ' + res
+        elif player_id == creator_id:
+            await _cancel_draft(draft_id)
+            msg = ('Successfully withdrew from draft `{draft_id}`.\n'
+                'Because you were the creator of this draft it has been cancelled. \n'
+                'The other players have been notified.').format(draft_id=draft_id)
+        else:
+            
+            num_players = get_num_players(draft_id)
+            await send_dm(
+                player_id = creator_id,
+                content = ('{player} has left your draft (`{draft}`).\n'
+                    'There are now {num} players registered.').format(
+                        player=player_name, 
+                        draft=draft_id, 
+                        num=num_players
+                    )
+            )
+            msg = 'Successfully withdrew from draft `{draft_id}`.'.format(draft_id=draft_id)
     else:
-        creator_name = get_creator(draft_id)
-        creator_id = get_player_dm_id(creator_name)
-        num_players = get_num_players(draft_id)
-        await send_dm(
-            player_id = creator_id,
-            content = ('{player} has left your draft (`{draft}`).\n'
-                'There are now {num} players registered.').format(
-                    player=player_name, 
-                    draft=draft_id, 
-                    num=num_players
-                )
-        )
-        msg = 'Successfully withdrew from draft `{draft_id}`.'.format(draft_id=draft_id)
+        msg = 'You are not enrolled in a draft.'
 
     await ctx.send(content = msg)
 
@@ -544,27 +582,28 @@ async def leave_draft(ctx, draft_id):
 @bot.command(name='showpicks', brief='Show cards YOU have picked.', aliases=['picks'])
 async def show_picks(ctx):
     player_name = ctx.author.name
-    if player_name not in PLAYERS:
+    player_id = ctx.author.id
+    if player_id not in PLAYERS:
         await send_dm(
-            player_id = get_player_dm_id(player_name),
+            player_id = player_id,
             content = 'You are not enrolled in a draft.'
         )
     else:
-        draft_id = PLAYERS[player_name]['draft_id']
+        draft_id = PLAYERS[player_id]['draft_id']
         
         await send_dm(
-            player_id =get_player_dm_id(player_name),
+            player_id =player_id,
             content='Here are your picks so far:'
         )
-        picks = get_picks(draft_id, player_name)
+        picks = get_picks(draft_id, player_id)
         
         await send_dm(
-            player_id=get_player_dm_id(player_name),
+            player_id=player_id,
             content=format_picks('Corp:\n\n', picks['corp'])
         )
         
         await send_dm(
-            player_id=get_player_dm_id(player_name),
+            player_id=player_id,
             content=format_picks('Runner:\n\n', picks['runner'])
         )
 
@@ -608,13 +647,14 @@ async def on_command_error(ctx, error):
 
 
 async def _cancel_draft(draft_id):
-    for player in get_players(draft_id):
+    creator_id, creator_name = get_creator(draft_id)
+    for player_id in get_players(draft_id):
         
         await send_dm(
-            player_id=get_player_dm_id(player),
+            player_id=player_id,
             content='Draft `{draft_id}` was cancelled by `{creator}`.'.format(
                     draft_id=draft_id,
-                    creator=get_creator(draft_id)
+                    creator=creator_name
                 )
             
         )
