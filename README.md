@@ -32,7 +32,7 @@ The Bot will tell you when others have joined the draft.
 
 #### Begin Draft
 
-```!start [draft ID]```
+```!start```
 
 Draft will begin and send everyone their first pack of cards.
 
@@ -42,6 +42,12 @@ Draft will begin and send everyone their first pack of cards.
 
 #### Leave Draft
 
-```!leave [draft ID]```
+```!leave```
 
+Can't leave the draft once it has started.  If the creator leaves the draft before it has started then it is essentially a ```!cancel```
 
+#### Cancel Draft
+
+```!cancel```
+
+Only the draft creator can cancel.  Will ask for verification to cancel the draft if it has already started.
